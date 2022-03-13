@@ -18,25 +18,34 @@
     <div class="content">
       <h3>Active Time - Register</h3>
       <!-- Form -->
-      <form class="box-form">
+      <form class="box-form"
+            (ngSubmit)="register()"
+            autocomplete="off"
+            [formGroup]="myForm">
         <h5>Create a free account</h5>
         <!-- Username -->
         <input type="text"
-               class="txt-username" required>
+               class="txt-username"
+               formControlName="username" required>
         <label class="lbl-username">Username</label>
-        <span>What's your username?</span>
+        <span *ngIf="isInvalidCamp('username')">What's your username? 😏</span>
 
         <!-- Password -->
         <input type="password"
-               class="txt-password" required>
+               class="txt-password"
+               formControlName="password"
+               (keyup)="changeValue()" required>
         <label class="lbl-password">Password</label>
-        <span>What's your password?</span>
+        <span *ngIf="isInvalidCamp('password')">What's your password? 🤐</span>
 
         <!-- Confirm password -->
         <input type="password"
-               class="txt-confirm-password" required>
+               class="txt-confirm-password"
+               formControlName="confirm-password"
+               (keyup)="changeValue()" required>
         <label class="lbl-confirm-password">Confirm password</label>
-        <span>Confirm your password!</span>
+        <span *ngIf="isInvalidCamp('confirm-password')">Confirm your password! 🤐</span>
+        <span *ngIf="!arePasswordsTheSame">The passwords aren't the same! 🤔</span>
 
         <!-- Submit -->
         <button class="btn btn-warning"

@@ -209,6 +209,7 @@
   font-family: "Hellix-SemiBold";
   color: #FFA500FF;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .box .content p a:hover {
