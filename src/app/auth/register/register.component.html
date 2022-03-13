@@ -28,7 +28,7 @@
                class="txt-username"
                formControlName="username" required>
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">What's your username? 😏</span>
+        <span *ngIf="isInvalidCamp('username')">Your username have to be between 1 and 15 characters! 😏</span>
 
         <!-- Password -->
         <input type="password"
@@ -36,7 +36,7 @@
                formControlName="password"
                (keyup)="changeValue()" required>
         <label class="lbl-password">Password</label>
-        <span *ngIf="isInvalidCamp('password')">What's your password? 🤐</span>
+        <span *ngIf="isInvalidCamp('password')">Write a password 🤐</span>
 
         <!-- Confirm password -->
         <input type="password"

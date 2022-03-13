@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   titlePage: Element = document.querySelector('#title-page')!;
   arePasswordsTheSame: boolean = true;
   myForm: FormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.maxLength(15)]],
+    username: [, [Validators.required, Validators.maxLength(14)]],
     password: [, [Validators.required]],
     'confirm-password': [, [Validators.required]]
   })
@@ -36,9 +36,10 @@ export class RegisterComponent implements OnInit {
 
     if(password !== confirmPassword ) {
       this.arePasswordsTheSame = false;
+      return;
     }
 
-    // Firebase
+    // TODO: Firebase
     console.log({username,password, confirmPassword});
 
   }
