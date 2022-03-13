@@ -241,6 +241,15 @@
   animation: loading infinite 4s linear;
 }
 
+.alert-user-created {
+  position: fixed;
+  width: 400px;
+  top: 0;
+  left: 50%;
+  margin-left: -200px;
+  text-align: center;
+}
+
 @keyframes loading {
   0% {
     transform: rotate(0deg);

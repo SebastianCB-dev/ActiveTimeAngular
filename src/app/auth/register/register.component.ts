@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
     'confirm-password': [, [Validators.required]]
   });
   isCreating: boolean = false;
+  isUserCreated: boolean = false;
+  canShowCreated: boolean = false;
 
   constructor(private fb: FormBuilder,
               private firebaseService: FirebaseService) { }
@@ -42,10 +44,15 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.isCreating = true;
-    // TODO: Validar que no se ha creado el usuario
-
+    const user = await this.firebaseService.getUser( username );
+    if(user) {
+      this.isUserCreated = true;
+      this.isCreating = false;
+      return;
+    }
     const currentDate = new Date().toJSON();
     await this.firebaseService.registerUser({username,password, createdAt: currentDate})
+    this.canShowCreated = true;
     this.isCreating = false;
   }
 
@@ -54,7 +61,12 @@ export class RegisterComponent implements OnInit {
            this.myForm.controls[camp].touched!;
   }
 
-  changeValue() {
+  changeValueUsername() {
+    this.isUserCreated = false;
+    this.canShowCreated = false;
+  }
+  changeValuePassword() {
     this.arePasswordsTheSame = true;
+    this.canShowCreated = false;
   }
 }

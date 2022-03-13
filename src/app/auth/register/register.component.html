@@ -26,15 +26,16 @@
         <!-- Username -->
         <input type="text"
                class="txt-username"
-               formControlName="username" required>
+               formControlName="username"
+               (keyup)="changeValueUsername()" required>
         <label class="lbl-username">Username</label>
         <span *ngIf="isInvalidCamp('username')">Your username have to be between 1 and 15 characters! 😏</span>
-
+        <span *ngIf="isUserCreated">This username has been used! 😳</span>
         <!-- Password -->
         <input type="password"
                class="txt-password"
                formControlName="password"
-               (keyup)="changeValue()" required>
+               (keyup)="changeValuePassword()" required>
         <label class="lbl-password">Password</label>
         <span *ngIf="isInvalidCamp('password')">Write a password 🤐</span>
 
@@ -42,7 +43,7 @@
         <input type="password"
                class="txt-confirm-password"
                formControlName="confirm-password"
-               (keyup)="changeValue()" required>
+               (keyup)="changeValuePassword()" required>
         <label class="lbl-confirm-password">Confirm password</label>
         <span *ngIf="isInvalidCamp('confirm-password')">Confirm your password! 🤐</span>
         <span *ngIf="!arePasswordsTheSame">The passwords aren't the same! 🤔</span>
@@ -65,3 +66,6 @@
       <i class="fas fa-spinner"></i>
     </div>
 </div>
+
+<div class="alert alert-success alert-user-created"
+     *ngIf="canShowCreated">User created successfully! 🥳🥳🎊🎊</div>

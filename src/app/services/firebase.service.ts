@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore,
          doc,
+         getDoc,
          setDoc } from 'firebase/firestore';
 
 @Injectable({
@@ -33,5 +34,11 @@ export class FirebaseService {
 
   async registerUser( user: any ) {
     await setDoc(doc(this.db, "users", user.username), user);
+  }
+
+  async getUser( username: string ) {
+    const docRef = doc(this.db, "users", username);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
   }
 }
