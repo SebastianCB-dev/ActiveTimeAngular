@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore,} from 'firebase/firestore/lite';
+import { getFirestore,
+         doc,
+         setDoc } from 'firebase/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +27,11 @@ export class FirebaseService {
      this.analytics = getAnalytics(this.app);
   }
 
-  getDB() {
+  get db() {
     return getFirestore(this.app);
+  }
+
+  async registerUser( user: any ) {
+    await setDoc(doc(this.db, "users", user.username), user);
   }
 }

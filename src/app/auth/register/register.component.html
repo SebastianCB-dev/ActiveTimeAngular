@@ -49,11 +49,19 @@
 
         <!-- Submit -->
         <button class="btn btn-warning"
-                type="submit">Sign up <i class="fa-solid fa-arrow-right"></i></button>
+                type="submit"
+                [disabled]="isCreating">Sign up <i class="fa-solid fa-arrow-right"></i></button>
       </form>
       <p>Already have an account? <a routerLink="/auth/login">Sign in</a></p>
     </div>
 
   </div>
 
+</div>
+
+<div *ngIf="isCreating"
+      class="loading">
+    <div class="content">
+      <i class="fas fa-spinner"></i>
+    </div>
 </div>

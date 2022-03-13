@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FirebaseService} from "../../services/firebase.service";
 
 @Component({
   selector: 'app-register',
@@ -14,9 +15,11 @@ export class RegisterComponent implements OnInit {
     username: [, [Validators.required, Validators.maxLength(14)]],
     password: [, [Validators.required]],
     'confirm-password': [, [Validators.required]]
-  })
+  });
+  isCreating: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
     if(this.titlePage) {
@@ -38,10 +41,12 @@ export class RegisterComponent implements OnInit {
       this.arePasswordsTheSame = false;
       return;
     }
+    this.isCreating = true;
+    // TODO: Validar que no se ha creado el usuario
 
-    // TODO: Firebase
-    console.log({username,password, confirmPassword});
-
+    const currentDate = new Date().toJSON();
+    await this.firebaseService.registerUser({username,password, createdAt: currentDate})
+    this.isCreating = false;
   }
 
   isInvalidCamp( camp: string ): boolean {
