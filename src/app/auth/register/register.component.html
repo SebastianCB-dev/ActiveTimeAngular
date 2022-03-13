@@ -29,7 +29,7 @@
                formControlName="username"
                (keyup)="changeValueUsername()" required>
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">Your username have to be between 1 and 15 characters! 😏</span>
+        <span *ngIf="isInvalidCamp('username')">Your username have to be between 7 and 15 characters! 😏</span>
         <span *ngIf="isUserCreated">This username has been used! 😳</span>
         <!-- Password -->
         <input type="password"
@@ -37,7 +37,7 @@
                formControlName="password"
                (keyup)="changeValuePassword()" required>
         <label class="lbl-password">Password</label>
-        <span *ngIf="isInvalidCamp('password')">Write a password 🤐</span>
+        <span *ngIf="isInvalidCamp('password')">Write a password between 7 and 15 characters! 🤐</span>
 
         <!-- Confirm password -->
         <input type="password"

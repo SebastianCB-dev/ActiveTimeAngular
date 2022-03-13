@@ -12,9 +12,9 @@ export class RegisterComponent implements OnInit {
   titlePage: Element = document.querySelector('#title-page')!;
   arePasswordsTheSame: boolean = true;
   myForm: FormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.maxLength(14)]],
-    password: [, [Validators.required]],
-    'confirm-password': [, [Validators.required]]
+    username: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
+    password: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
+    'confirm-password': [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]]
   });
   isCreating: boolean = false;
   isUserCreated: boolean = false;
