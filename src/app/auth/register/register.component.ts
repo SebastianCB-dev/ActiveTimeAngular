@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
     password: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
     'confirm-password': [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]]
   });
+
   isCreating: boolean = false;
   isUserCreated: boolean = false;
   canShowCreated: boolean = false;
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
               private soundsService: SoundsService) { }
 
   ngOnInit(): void {
+    // Change title page
     if(this.titlePage) {
       this.titlePage.innerHTML = 'Active Time | Register';
     }
@@ -36,18 +38,20 @@ export class RegisterComponent implements OnInit {
     const password = this.myForm.controls['password'].value;
     const confirmPassword = this.myForm.controls['confirm-password'].value;
 
+    // If the form is invalid
     if(this.myForm.invalid) {
       this.myForm.markAllAsTouched();
       this.soundsService.error();
       return;
     }
-
+    // The password have to be the same
     if(password !== confirmPassword ) {
       this.arePasswordsTheSame = false;
       this.soundsService.error();
       return;
     }
     this.isCreating = true;
+    // get user to compare with the user in the form
     const user = await this.firebaseService.getUser( username );
     if(user) {
       this.isUserCreated = true;
@@ -56,10 +60,14 @@ export class RegisterComponent implements OnInit {
       return;
     }
     const currentDate = new Date().toJSON();
+    // Register User
     await this.firebaseService.registerUser({username,password, createdAt: currentDate})
+
     this.canShowCreated = true;
     this.soundsService.success();
     this.isCreating = false;
+    //Reset form
+    this.myForm.reset();
   }
 
   isInvalidCamp( camp: string ): boolean {
