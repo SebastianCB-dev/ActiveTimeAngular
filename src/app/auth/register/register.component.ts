@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FirebaseService} from "../../services/firebase.service";
+import {SoundsService} from "../../services/sounds.service";
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
   canShowCreated: boolean = false;
 
   constructor(private fb: FormBuilder,
-              private firebaseService: FirebaseService) { }
+              private firebaseService: FirebaseService,
+              private soundsService: SoundsService) { }
 
   ngOnInit(): void {
     if(this.titlePage) {
@@ -36,11 +38,13 @@ export class RegisterComponent implements OnInit {
 
     if(this.myForm.invalid) {
       this.myForm.markAllAsTouched();
+      this.soundsService.error();
       return;
     }
 
     if(password !== confirmPassword ) {
       this.arePasswordsTheSame = false;
+      this.soundsService.error();
       return;
     }
     this.isCreating = true;
@@ -48,11 +52,13 @@ export class RegisterComponent implements OnInit {
     if(user) {
       this.isUserCreated = true;
       this.isCreating = false;
+      this.soundsService.error();
       return;
     }
     const currentDate = new Date().toJSON();
     await this.firebaseService.registerUser({username,password, createdAt: currentDate})
     this.canShowCreated = true;
+    this.soundsService.success();
     this.isCreating = false;
   }
 
