@@ -18,11 +18,11 @@
     <div class="content">
       <h3>Active Time - Login</h3>
       <!-- Form -->
-      <form class="box-form"
+      <form class="box-form"Prot
             (ngSubmit)="login()"
             autocomplete="off"
             [formGroup]="myForm">
-        <h5>Create a free account</h5>
+        <h5>Welcome to Active Time 😁</h5>
         <!-- Username -->
         <input type="text"
                class="txt-username"
@@ -37,11 +37,11 @@
                formControlName="password"
                (keyup)="changeValueLogin()" required>
         <label class="lbl-password">Password</label>
-
+        <span *ngIf="isInvalidCamp('password')">Your password have to be between 7 and 15 characters! 😏</span>
         <!-- Submit -->
         <button class="btn btn-warning"
                 type="submit"
-                [disabled]="isLoading">Sign up <i class="fa-solid fa-arrow-right"></i></button>
+                [disabled]="isLoading">Sign in <i class="fa-solid fa-arrow-right"></i></button>
       </form>
       <p>Already don't have an account? <a routerLink="/auth/register">Sign up</a></p>
     </div>
