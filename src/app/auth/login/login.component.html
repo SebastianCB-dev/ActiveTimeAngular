@@ -1,1 +1,59 @@
-<p>login works!</p>
+
+<div class="container">
+
+  <div class="box">
+
+    <div class="title">
+      <div class="points">
+        <div class="point-red point"
+             routerLink="/">
+          <i class="fa-solid fa-x"></i>
+        </div>
+        <div class="point-yellow point"></div>
+        <div class="point-green point"></div>
+      </div>
+      <p routerLink="/">Active Time</p>
+    </div>
+
+    <div class="content">
+      <h3>Active Time - Login</h3>
+      <!-- Form -->
+      <form class="box-form"
+            (ngSubmit)="login()"
+            autocomplete="off"
+            [formGroup]="myForm">
+        <h5>Create a free account</h5>
+        <!-- Username -->
+        <input type="text"
+               class="txt-username"
+               formControlName="username"
+               (keyup)="changeValueLogin()" required>
+        <label class="lbl-username">Username</label>
+        <span *ngIf="isInvalidCamp('username')">Your username have to be between 7 and 15 characters! 😏</span>
+        <span *ngIf="isLoginInvalid">Incorrect username and/or password! 😳</span>
+        <!-- Password -->
+        <input type="password"
+               class="txt-password"
+               formControlName="password"
+               (keyup)="changeValueLogin()" required>
+        <label class="lbl-password">Password</label>
+
+        <!-- Submit -->
+        <button class="btn btn-warning"
+                type="submit"
+                [disabled]="isLoading">Sign up <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+      <p>Already don't have an account? <a routerLink="/auth/register">Sign up</a></p>
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="isLoading"
+     class="loading">
+  <div class="content">
+    <i class="fas fa-spinner"></i>
+  </div>
+</div>
+
