@@ -48,9 +48,10 @@ export class LoginComponent implements OnInit {
       this.soundsService.error();
       return;
     }
-    // TODO: Create token UUID
+    localStorage.setItem('att-session', username);
     this.soundsService.success();
     this.isLoading = false;
+    // Todo change route
     await this.route.navigate(['/']);
 
   }
