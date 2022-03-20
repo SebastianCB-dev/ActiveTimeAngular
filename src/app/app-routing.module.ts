@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
+    path: 'tasks',
+    loadChildren: () => import('./screens/screens.module').then(m => m.ScreensModule)
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
