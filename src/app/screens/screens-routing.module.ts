@@ -8,6 +8,10 @@ const routes: Routes = [{
     {
       path: 'menu',
       component: LobbyPageComponent
+    },
+    {
+      path: '**',
+      redirectTo: 'menu'
     }
   ]
 }];
