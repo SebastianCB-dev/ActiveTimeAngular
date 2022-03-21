@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Hellix-SemiBold";
+  src: url("../../../assets/fonts/Hellix-SemiBold.woff2");
+}
+@font-face {
+  font-family: "Hellix-Regular";
+  src: url("../../../assets/fonts/Hellix-Regular.woff2");
+}
+
+.container-lobby {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-lobby .content-lobby {
+  width: 70%;
+  height: 700px;
+  color: white;
+}
+
+.container-lobby .content-lobby .title {
+  text-align: center;
+  font-family: 'Hellix-SemiBold';
+}
+.container-lobby .content-lobby .title h3{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.container-lobby .content-lobby .title h3 span{
+  color: orange
+}
+.container-lobby .content-lobby .title h4{
+  font-size: 30px;
+  color: #ccc;
+}
+
+.container-lobby .content-lobby .options {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container-lobby .content-lobby .options .option {
+  width: 220px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.69);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 200ms;
+  overflow: hidden;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border: 4px solid transparent;
+}
+
+.container-lobby .content-lobby .options .option:hover {
+  background: #000;
+  border-radius: 12px;
+  transform: scale(1.05, 1.05);
+  -webkit-transform: scale(1.05, 1.05);
+  -moz-transform: scale(1.05, 1.05);
+  -ms-transform: scale(1.05, 1.05);
+  -o-transform: scale(1.05, 1.05);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  
+}
+.container-lobby .content-lobby .options .option-add:hover {
+  box-shadow: 0px 0px 30px #4CAF50; 
+  border: 4px solid #143d15;
+}
+.container-lobby .content-lobby .options .option-read:hover {
+  box-shadow: 0px 0px 30px rgb(255, 166, 0);
+  border: 4px solid rgb(136, 90, 4);
+}
+.container-lobby .content-lobby .options .option-update:hover {
+  box-shadow: 0px 0px 30px #1C78BF;
+  border: 4px solid #062035;
+}
+.container-lobby .content-lobby .options .option-delete:hover {
+  box-shadow: 0px 0px 30px #DA3845;
+  border: 4px solid #47070d;
+}
+
+.container-lobby .content-lobby .options .option-add:hover p {
+  color: rgb(31, 195, 16);
+}
+.container-lobby .content-lobby .options .option-read:hover p{
+  color: rgb(255, 166, 0);
+}
+.container-lobby .content-lobby .options .option-update:hover p {
+  color: #1484da;
+}
+.container-lobby .content-lobby .options .option-delete:hover p {
+  color: rgb(168, 0, 0);
+}
+
+.container-lobby .content-lobby .options .option img {
+  display: block;
+  width: 105px;
+  height: 105px;
+  margin: 0px auto;
+  margin-top: 55px;
+  transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+}
+
+.container-lobby .content-lobby .options .option p {
+  position: relative;
+  text-align: center;
+  font-family: "Hellix-SemiBold";
+  font-size: 25px;
+  margin-top: 60px;
+  z-index: 20;
+  transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+}
+
+.container-lobby .content-lobby .options .option:hover p {
+  margin-top: 2px;
+}

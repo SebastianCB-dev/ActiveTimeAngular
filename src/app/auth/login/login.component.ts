@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     this.soundsService.success();
     this.isLoading = false;
     // Todo change route
-    await this.route.navigate(['/lobby']);
+    await this.route.navigate(['/tasks/menu']);
 
   }
 

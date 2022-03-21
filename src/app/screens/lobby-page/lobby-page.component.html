@@ -1,1 +1,32 @@
-<h1>Lobby page works!</h1>
+<div class="container-lobby">
+
+  <div class="content-lobby">
+    <div class="title">
+        <h1>Active Time - Menu</h1>
+        <h3>Welcome <span>{{ getUser() }}</span></h3>
+        <h4>What would you want to do?</h4>
+    </div>
+    <div class="options">
+      <div class="option option-add"
+           (click)="redirectTo('add-tasks')">
+        <img src="../../../assets/imgs/add.png">
+        <p>Add tasks</p>
+      </div>
+      <div class="option option-read"
+           (click)="redirectTo('list-tasks')">
+        <img src="../../../assets/imgs/search.png">
+        <p>Show tasks</p>
+      </div>
+      <div class="option option-update"
+           (click)="redirectTo('update-tasks')">
+        <img src="../../../assets/imgs/update.png">
+        <p>Update tasks</p>
+      </div>
+      <div class="option option-delete"
+           (click)="redirectTo('delete-tasks')">
+        <img src="../../../assets/imgs/trash.png">
+        <p>Delete tasks</p>
+      </div>
+    </div>
+  </div>
+</div>

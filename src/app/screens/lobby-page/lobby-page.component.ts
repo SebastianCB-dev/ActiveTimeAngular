@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lobby-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LobbyPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  getUser(): string {
+    return localStorage.getItem('att-session') || '';
+  }
+
+  redirectTo(path: string) {
+      this.router.navigateByUrl(`tasks/${path}`);
+  }
 }

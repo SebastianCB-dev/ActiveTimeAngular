@@ -21,25 +21,22 @@ export class AuthGuard implements CanActivate, CanLoad {
   ) {
   }
 
-  canActivate(
+   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
     if(!localStorage.getItem('att-session')) {
-     this.router.navigateByUrl('/auth/login');
-      return false;
+      this.router.navigateByUrl('/auth/login');
     }
     return true;
 
   }
 
-  canLoad(
+   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if(!localStorage.getItem('att-session')) {
       this.router.navigateByUrl('/auth/login');
-      return false;
     }
     return true;
 
