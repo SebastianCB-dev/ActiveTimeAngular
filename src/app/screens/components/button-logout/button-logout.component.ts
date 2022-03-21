@@ -15,9 +15,9 @@ export class ButtonLogoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout() {
+  async logout() {
     localStorage.removeItem('att-session');
-    this.router.navigateByUrl('/');
+    await this.router.navigateByUrl('/');
   }
 
 }
