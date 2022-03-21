@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button-logout',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonLogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    localStorage.removeItem('att-session');
+    this.router.navigateByUrl('/');
   }
 
 }
