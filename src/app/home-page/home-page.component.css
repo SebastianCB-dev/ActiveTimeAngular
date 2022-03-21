@@ -9,7 +9,10 @@
   src: url("../../assets/fonts/Hellix-Regular.woff2");
 }
 
-
+.content {
+  background-image: url('../../assets/imgs/background_main.jpg');
+  height: 100vh;
+}
 .main-page {
   min-height: 500px;
   height: 85vh;
