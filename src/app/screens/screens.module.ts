@@ -7,6 +7,7 @@ import { AddTasksComponent } from './add-tasks/add-tasks.component';
 import { DeleteTasksComponent } from './delete-tasks/delete-tasks.component';
 import { UpdateTasksComponent } from './update-tasks/update-tasks.component';
 import { ListTasksComponent } from './list-tasks/list-tasks.component';
+import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListTasksComponent } from './list-tasks/list-tasks.component';
     AddTasksComponent,
     DeleteTasksComponent,
     UpdateTasksComponent,
-    ListTasksComponent
+    ListTasksComponent,
+    ButtonLogoutComponent
   ],
   imports: [
     CommonModule,
