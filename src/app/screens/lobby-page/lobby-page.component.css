@@ -13,6 +13,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('../../../assets/imgs/background_lobby.jpg');
+  background-size: cover;
+  background-position: 0px -300px;
 }
 
 .container-lobby .content-lobby {
@@ -25,8 +28,11 @@
   text-align: center;
   font-family: 'Hellix-SemiBold';
 }
+.container-lobby .content-lobby .title h1{
+  font-size: 80px;
+}
 .container-lobby .content-lobby .title h3{
-    font-size: 40px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 .container-lobby .content-lobby .title h3 span{
@@ -62,7 +68,7 @@
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  border: 4px solid transparent;
+  border: 4px solid #fff;
 }
 
 .container-lobby .content-lobby .options .option:hover {
@@ -77,10 +83,10 @@
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  
+
 }
 .container-lobby .content-lobby .options .option-add:hover {
-  box-shadow: 0px 0px 30px #4CAF50; 
+  box-shadow: 0px 0px 30px #4CAF50;
   border: 4px solid #143d15;
 }
 .container-lobby .content-lobby .options .option-read:hover {
