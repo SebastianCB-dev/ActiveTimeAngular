@@ -22,6 +22,7 @@
   width: 70%;
   height: 700px;
   color: white;
+  overflow: hidden
 }
 
 .container-lobby .content-lobby .title {
