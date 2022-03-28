@@ -34,7 +34,18 @@
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  /* TODO: Pendiente sombra */
+}
+/* Shadows */
+.container-prices .container-box-prices .box-prices .price-one {
+  box-shadow: -14px 0px 40px #000;
+}
+.container-prices .container-box-prices .box-prices .price-three {
+  box-shadow: 14px 0px 40px #000;
+}
+.container-prices .container-box-prices .box-prices .price-two {
+  position: relative;
+  z-index: 3;
+  box-shadow: 0px 10px 10px #fff, 0px -10px 10px #fff;
 }
 
 .container-prices .container-box-prices .box-prices .price-two {
@@ -47,6 +58,7 @@
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
 }
+
 
 .info {
   width: 85%;
