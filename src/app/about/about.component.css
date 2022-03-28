@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Hellix-SemiBold";
+  src: url("../../assets/fonts/Hellix-SemiBold.woff2");
+}
+@font-face {
+  font-family: "Hellix-Regular";
+  src: url("../../assets/fonts/Hellix-Regular.woff2");
+}
+
+.container-about {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/imgs/background_about.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-about .content-about {
+  width: 60%;
+  height: 600px;
+}
+
+.container-about .content-about h3 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  font-family: "Hellix-SemiBold";
+}
+
+.container-about .content-about .content-description {
+  width: 70%;
+  margin: 0px auto;
+  background-color: red;
+  height: auto;
+  padding: 20px;
+  background-color: #000;
+  margin-top: 120px;
+  border: 2px solid #ccc;
+}
+.container-about .content-about .content-description p{
+  color: #fff;
+  font-size: 24px;
+  font-family: "Hellix-Regular";
+  text-align: center;
+}
+
+
+.btn-back {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transform: scale(1.2,1.2);
+  -webkit-transform: scale(1.2,1.2);
+  -moz-transform: scale(1.2,1.2);
+  -ms-transform: scale(1.2,1.2);
+  -o-transform: scale(1.2,1.2);
+}
