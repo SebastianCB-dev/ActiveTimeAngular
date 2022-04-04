@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTasksComponent implements OnInit {
 
+  isFirstOption = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  nextOption() {
+    this.isFirstOption = false;
+  }
+
+  backOption() {
+    this.isFirstOption = true;
+  }
+  
 }

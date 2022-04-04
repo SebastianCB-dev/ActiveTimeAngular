@@ -1,9 +1,9 @@
-
 <div class="container-main">
   <div class="content-add-task">
+
     <div class="title">
       <div class="points">
-        <div class="point-red point"
+        <div class="point-red point" 
              routerLink="/tasks/menu">
           <i class="fa-solid fa-x"></i>
         </div>
@@ -12,8 +12,40 @@
       </div>
       <p routerLink="/tasks/menu">Active Time</p>
     </div>
+
+    <div class="content">
+      <h3>Add Tasks</h3>
+      <form>
+        <div class="first-part"
+             *ngIf="isFirstOption">
+          <!-- Task name  -->
+          <input type="text">
+          <label>Task name</label>
+          <!-- Task Description -->
+          <input type="text">
+          <label>Task Description</label>
+          <!-- Priority -->
+          <!-- Todo combobox -->
+
+          <!-- Button Next -->
+          <button class="btn btn-success"
+                  (click)="nextOption()">Next</button>
+        </div>
+        <div class="second-part"
+            *ngIf="!isFirstOption">
+          <!-- Initial Date-->
+          <input type="date">
+
+          <!-- Final Date -->
+          <input type="date">
+          <!-- Button Back -->
+          <button class="btn btn-danger">Back</button>
+          <!-- Button Add task-->
+          <button type="button" class="btn btn-success"
+                  (click)="backOption()">Add Task</button>
+        </div>
+
+      </form>
+    </div>
   </div>
 </div>
-
-
-
