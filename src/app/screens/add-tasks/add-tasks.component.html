@@ -3,7 +3,7 @@
 
     <div class="title">
       <div class="points">
-        <div class="point-red point" 
+        <div class="point-red point"
              routerLink="/tasks/menu">
           <i class="fa-solid fa-x"></i>
         </div>
@@ -16,34 +16,39 @@
     <div class="content">
       <h3>Add Tasks</h3>
       <form>
-        <div class="first-part"
-             *ngIf="isFirstOption">
           <!-- Task name  -->
+          <label class="title-label">Task name</label>
           <input type="text">
-          <label>Task name</label>
-          <!-- Task Description -->
-          <input type="text">
-          <label>Task Description</label>
-          <!-- Priority -->
-          <!-- Todo combobox -->
 
-          <!-- Button Next -->
-          <button class="btn btn-success"
-                  (click)="nextOption()">Next</button>
-        </div>
-        <div class="second-part"
-            *ngIf="!isFirstOption">
+          <!-- Task Description -->
+          <label>Task Description</label>
+          <input type="text">
+
+          <!-- Priority -->
+          <label>Priority</label>
+          <select name="select">
+            <option value="value1" class="option1">High</option>
+            <option value="value2" class="option2" selected>Medium</option>
+            <option value="value3" class="option3">Low</option>
+          </select>
+
+
           <!-- Initial Date-->
+          <label>Initial Date</label>
           <input type="date">
 
           <!-- Final Date -->
+          <label>Final Date</label>
           <input type="date">
-          <!-- Button Back -->
-          <button class="btn btn-danger">Back</button>
-          <!-- Button Add task-->
-          <button type="button" class="btn btn-success"
-                  (click)="backOption()">Add Task</button>
-        </div>
+
+          <!-- Buttons -->
+          <div class="buttons">
+            <button class="btn btn-danger"
+                    type="button"
+                    routerLink="/tasks/menu">Cancel</button>
+            <button class="btn btn-primary" type="button">Clear</button>
+            <button class="btn btn-success" type="button">Add task</button>
+          </div>
 
       </form>
     </div>
