@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ScreensRoutingModule } from './screens-routing.module';
+
 import { LobbyPageComponent } from './lobby-page/lobby-page.component';
 import { AddTasksComponent } from './add-tasks/add-tasks.component';
 import { DeleteTasksComponent } from './delete-tasks/delete-tasks.component';
@@ -21,7 +23,8 @@ import { ButtonLogoutComponent } from './components/button-logout/button-logout.
   ],
   imports: [
     CommonModule,
-    ScreensRoutingModule
+    ScreensRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ScreensModule { }

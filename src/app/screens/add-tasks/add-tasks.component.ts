@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-tasks',
@@ -7,12 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTasksComponent implements OnInit {
 
-
-  constructor() { }
+  miFormulario: FormGroup = this.fb.group({
+    "task-name": [,[Validators.required, Validators.minLength(5)]],
+    "task-description": [,[Validators.required, Validators.minLength(5)]],
+    "priority": [, [Validators.required]],
+    "initial-date": [,[Validators.required]],
+    "final-date": [,[Validators.required]]
+  })
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.clearForm();
   }
 
+  addTask() {
+    // console.log({
+    //   name: this.miFormulario.controls["task-name"].value,
+    //   description: this.miFormulario.controls["task-description"].value,
+    //   priority: this.miFormulario.controls["priority"].value,
+    //   initialDate: this.miFormulario.controls["initial-date"].value,
+    //   finalDate: this.miFormulario.controls["final-date"].value,})
+  }
+
+  clearForm() {
+    
+    this.miFormulario.reset({
+      "task-name": '',
+      "task-description": '',
+      "priority": 'Medium',
+      "initial-date": '',
+      "final-date": ''
+    });
+  }
 
 
 }
