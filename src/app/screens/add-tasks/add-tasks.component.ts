@@ -9,12 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddTasksComponent implements OnInit {
 
   miFormulario: FormGroup = this.fb.group({
-    "task-name": [,[Validators.required, Validators.minLength(5)]],
-    "task-description": [,[Validators.required, Validators.minLength(5)]],
+    "task-name": [,[Validators.required, Validators.minLength(1)]],
+    "task-description": [,[Validators.required, Validators.minLength(1)]],
     "priority": [, [Validators.required]],
     "initial-date": [,[Validators.required]],
     "final-date": [,[Validators.required]]
   })
+
+  isValidForm: boolean = true;
+
   constructor(
     private fb: FormBuilder
   ) { }
@@ -24,12 +27,18 @@ export class AddTasksComponent implements OnInit {
   }
 
   addTask() {
-    // console.log({
-    //   name: this.miFormulario.controls["task-name"].value,
-    //   description: this.miFormulario.controls["task-description"].value,
-    //   priority: this.miFormulario.controls["priority"].value,
-    //   initialDate: this.miFormulario.controls["initial-date"].value,
-    //   finalDate: this.miFormulario.controls["final-date"].value,})
+
+    if(!this.miFormulario.valid) {
+      this.isValidForm = false;
+      return;
+    }
+    
+    console.log({
+      name: this.miFormulario.controls["task-name"].value,
+      description: this.miFormulario.controls["task-description"].value,
+      priority: this.miFormulario.controls["priority"].value,
+      initialDate: this.miFormulario.controls["initial-date"].value,
+      finalDate: this.miFormulario.controls["final-date"].value,})
   }
 
   clearForm() {
@@ -41,6 +50,12 @@ export class AddTasksComponent implements OnInit {
       "initial-date": '',
       "final-date": ''
     });
+    
+        
+  }
+
+  writing() {
+    this.isValidForm = true;
   }
 
 

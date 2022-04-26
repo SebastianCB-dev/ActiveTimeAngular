@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ScreensRoutingModule } from './screens-routing.module';
 
@@ -24,7 +24,8 @@ import { ButtonLogoutComponent } from './components/button-logout/button-logout.
   imports: [
     CommonModule,
     ScreensRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ScreensModule { }

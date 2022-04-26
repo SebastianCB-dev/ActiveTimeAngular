@@ -162,3 +162,14 @@
 }
 
 
+
+#message-alert {
+  display: block;
+  position: fixed;
+  width: 220px;
+  top: 0;
+  left: 50%;
+  margin-left: -110px;
+  text-align: center;
+  font-family: "Hellix-SemiBold";
+}
