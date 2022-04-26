@@ -21,13 +21,15 @@
           <!-- Task name  -->
           <label class="title-label">Task name</label>
           <input type="text"                
-                 formControlName="task-name">
+                 formControlName="task-name"
+                 (keypress)="writing()">
 
 
           <!-- Task Description -->
           <label>Task Description</label>
           <input type="text"                
-                 formControlName="task-description">
+                 formControlName="task-description"
+                 (keypress)="writing()">
 
           <!-- Priority -->
           <label>Priority</label>
@@ -37,7 +39,6 @@
             <option value="Medium" class="option2" selected>Medium</option>
             <option value="Low" class="option3">Low</option>
           </select>
-
 
           <!-- Initial Date-->
           <label>Initial Date</label>

@@ -41,4 +41,8 @@ export class FirebaseService {
     const docSnap = await getDoc(docRef);
     return docSnap.data();
   }
+
+  async registerTask( task: any ) {
+    await setDoc(doc(this.db, "tasks", task.id), task);
+  }
 }
