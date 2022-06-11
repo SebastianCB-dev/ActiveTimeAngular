@@ -20,14 +20,14 @@
             [formGroup]="miFormulario">
           <!-- Task name  -->
           <label class="title-label">Task name</label>
-          <input type="text"                
+          <input type="text"
                  formControlName="task-name"
                  (keypress)="writing()">
 
 
           <!-- Task Description -->
           <label>Task Description</label>
-          <input type="text"                
+          <input type="text"
                  formControlName="task-description"
                  (keypress)="writing()">
 
@@ -70,4 +70,11 @@
      class="alert alert-danger"
      id="message-alert">
   Fill the inputs correctly.
+</div>
+
+<div *ngIf="isCreating"
+      class="loading">
+    <div class="content">
+      <i class="fas fa-spinner"></i>
+    </div>
 </div>
