@@ -22,14 +22,16 @@
           <label class="title-label">Task name</label>
           <input type="text"
                  formControlName="task-name"
-                 (keypress)="writing()">
+                 (keypress)="writing()"
+                 placeholder="Play League Of Legends...">
 
 
           <!-- Task Description -->
           <label>Task Description</label>
           <input type="text"
                  formControlName="task-description"
-                 (keypress)="writing()">
+                 (keypress)="writing()"
+                 placeholder="Play League of Legends at 5:30 pm ...">
 
           <!-- Priority -->
           <label>Priority</label>
@@ -43,12 +45,14 @@
           <!-- Initial Date-->
           <label>Initial Date</label>
           <input type="date"
-                 formControlName="initial-date">
+                 formControlName="initial-date"
+                 [min]="getMinDate()">
 
           <!-- Final Date -->
           <label>Final Date</label>
           <input type="date"
-                 formControlName="final-date">
+                 formControlName="final-date"
+                 [min]="getMinDate()">
 
           <!-- Buttons -->
           <div class="buttons">
@@ -69,6 +73,7 @@
 <div *ngIf="!isValidForm"
      class="alert alert-danger"
      id="message-alert">
+<<<<<<< HEAD
   Fill the inputs correctly.
 </div>
 
@@ -77,4 +82,7 @@
     <div class="content">
       <i class="fas fa-spinner"></i>
     </div>
+=======
+  {{ message }}
+>>>>>>> 779d054 (Feat: Added min date in Add Task)
 </div>

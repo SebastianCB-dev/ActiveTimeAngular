@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from '../../services/firebase.service';
+import { SoundsService } from 'src/app/services/sounds.service';
 
 // ID
 import { v4 as uuidv4 } from 'uuid';
-import { SoundsService } from 'src/app/services/sounds.service';
 @Component({
   selector: 'app-add-tasks',
   templateUrl: './add-tasks.component.html',
@@ -73,5 +73,7 @@ export class AddTasksComponent implements OnInit {
     this.isValidForm = true;
   }
 
-
+  getMinDate(): string {
+    return new Date().toISOString().split('T')[0];
+  }
 }
