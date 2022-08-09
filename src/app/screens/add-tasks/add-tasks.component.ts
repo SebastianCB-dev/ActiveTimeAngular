@@ -40,7 +40,12 @@ export class AddTasksComponent implements OnInit {
       this.ss.error();
       return;
     }
-
+    if(this.miFormulario.controls['initial-date'].value > this.miFormulario.controls['final-date'].value) {
+      this.isValidForm = false;
+      this.isCreating = false;
+      this.ss.error();
+      return;
+    }
     const task = {
       id: uuidv4(),
       user: localStorage.getItem('att-session'),
@@ -53,7 +58,9 @@ export class AddTasksComponent implements OnInit {
     await this.fs.registerTask(task);
     this.isCreating = false;
     this.ss.success();
-    this.miFormulario.reset();
+    // Reset form
+    this.clearForm();
+    this.writing();
   }
 
   clearForm() {
