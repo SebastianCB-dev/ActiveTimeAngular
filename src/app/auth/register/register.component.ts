@@ -26,12 +26,7 @@ export class RegisterComponent implements OnInit {
               private firebaseService: FirebaseService,
               private soundsService: SoundsService) { }
 
-  ngOnInit(): void {
-    // Change title page
-    if(this.titlePage) {
-      this.titlePage.innerHTML = 'Active Time | Register';
-    }
-  }
+  ngOnInit(): void {}
 
   async register() {
     const username = this.myForm.controls['username'].value;

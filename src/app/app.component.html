@@ -2,4 +2,38 @@
 
 <router-outlet></router-outlet>
 
-
+<nav id="navbar-home-page">
+  <ul>
+    <li routerLink="/"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="active">
+      <i class="fas fa-home"></i>
+      <p>Home</p>
+      <span>·</span>
+    </li>
+    <li routerLink="/prices"
+        routerLinkActive="active">
+      <i class="fas fa-money-bill"></i>
+      <p>Prices</p>
+      <span>·</span>
+    </li>
+    <li routerLink="/about"
+        routerLinkActive="active">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>About</p>
+      <span>·</span>
+    </li>
+    <li routerLink="/auth/login"
+        routerLinkActive="active">
+      <i class="fa-solid fa-circle-user"></i>
+      <p>Sign in</p>
+      <span>·</span>
+    </li>
+    <li routerLink="/auth/register"
+        routerLinkActive="active">
+      <i class="fa-solid fa-plus"></i>
+      <p>Sign up</p>
+      <span>·</span>
+    </li>
+  </ul>
+</nav>

@@ -23,11 +23,7 @@ export class LoginComponent implements OnInit {
               private fs: FirebaseService,
               private route: Router) { }
 
-  ngOnInit(): void {
-    if(this.titlePage) {
-      this.titlePage.innerHTML = 'Active Time | Login';
-    }
-  }
+  ngOnInit(): void {}
 
   async login() {
     const username = this.myForm.controls['username'].value;

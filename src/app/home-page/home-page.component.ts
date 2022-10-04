@@ -7,14 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  titlePage: Element = document.querySelector('#title-page')!;
   constructor() { }
 
-  ngOnInit(): void {
-     // Change title page
-     if(this.titlePage) {
-      this.titlePage.innerHTML = 'Active Time';
-    }
+  ngOnInit(): void {     
   }
 
 }

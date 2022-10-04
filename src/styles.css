@@ -10,3 +10,13 @@ body {
   padding-right: 0px !important;
   background-color: #1E1E1E;
 }
+
+@font-face {
+  font-family: "Hellix-SemiBold";
+  src: url("./assets/fonts/Hellix-SemiBold.woff2");
+}
+
+@font-face {
+  font-family: "Hellix-Regular";
+  src: url("./assets/fonts/Hellix-Regular.woff2");
+}

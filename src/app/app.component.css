@@ -1,0 +1,50 @@
+#navbar-home-page {
+  position: fixed;
+  width: 600px;
+  height: 70px;
+  bottom: 0;
+  background-color: #000;
+  left: 50%;
+  margin-left: -300px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#navbar-home-page ul {
+  display: flex;
+  list-style: none;
+  color: #fff;
+  justify-content: space-around;
+  text-align: center;
+  height: 100%;
+}
+
+#navbar-home-page ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+#navbar-home-page ul li:hover {
+  color: rgb(255, 166, 0);
+  transition: all 300ms;
+}
+#navbar-home-page ul li p {
+  font-family: 'Hellix-Regular';
+  font-size: 17px;
+}
+#navbar-home-page ul li span {  
+  opacity: 0;
+  font-weight: bold;
+  margin-bottom: -13px;
+}
+
+#navbar-home-page ul .active span {
+  opacity: 1;  
+}
+.active {
+  color: rgb(234, 152, 0);
+}
+
+.active:hover {
+  color: rgb(234, 152, 0);
+}
