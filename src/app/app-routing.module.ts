@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    title: 'Active Time | Task Manager'
   },
   {
     path: 'auth',
@@ -23,11 +24,13 @@ const routes: Routes = [
   },
   {
     path: 'prices',
-    component: PricesComponent
+    component: PricesComponent,
+    title: 'Active Time | Prices'
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    title: 'Active Time | About'
   },
   {
     path: '**',

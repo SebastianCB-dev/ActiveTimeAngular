@@ -10,11 +10,13 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        title: 'Active Time | Login'
       },
       {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        title: 'Active Time | Register'
       },
       {
         path: '**',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {FirebaseService} from "../../services/firebase.service";
 import {SoundsService} from "../../services/sounds.service";
 
@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   titlePage: Element = document.querySelector('#title-page')!;
   arePasswordsTheSame: boolean = true;
-  myForm: FormGroup = this.fb.group({
+  myForm: UntypedFormGroup = this.fb.group({
     username: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
     password: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
     'confirm-password': [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]]
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   isUserCreated: boolean = false;
   canShowCreated: boolean = false;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private firebaseService: FirebaseService,
               private soundsService: SoundsService) { }
 
