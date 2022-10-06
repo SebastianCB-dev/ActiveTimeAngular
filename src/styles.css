@@ -8,7 +8,7 @@
 body {
   padding-left: 0px !important;
   padding-right: 0px !important;
-  background-color: #1E1E1E;
+  background-color: #0B0B10;
 }
 
 @font-face {
@@ -19,4 +19,19 @@ body {
 @font-face {
   font-family: "Hellix-Regular";
   src: url("./assets/fonts/Hellix-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Sora-SemiBold";
+  src: url("./assets/fonts/Sora-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Sora-Regular";
+  src: url("./assets/fonts/Sora-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sora-Bold";
+  src: url("./assets/fonts/Sora-Bold.ttf");
 }
