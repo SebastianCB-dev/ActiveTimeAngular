@@ -26,7 +26,7 @@
   font-size: 60px;
   color: #fff;
   text-align: center;
-  font-family: "Hellix-SemiBold";
+  font-family: "Sora-SemiBold";
 }
 
 .container-about .content-about .content-description {
@@ -41,19 +41,7 @@
 }
 .container-about .content-about .content-description p{
   color: #fff;
-  font-size: 24px;
+  font-size: 26px;
   font-family: "Hellix-Regular";
   text-align: center;
-}
-
-
-.btn-back {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  transform: scale(1.2,1.2);
-  -webkit-transform: scale(1.2,1.2);
-  -moz-transform: scale(1.2,1.2);
-  -ms-transform: scale(1.2,1.2);
-  -o-transform: scale(1.2,1.2);
 }
