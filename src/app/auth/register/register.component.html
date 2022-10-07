@@ -29,8 +29,8 @@
                formControlName="username"
                (keyup)="changeValueUsername()" required>
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">Your username have to be between 7 and 15 characters! 😏</span>
-        <span *ngIf="isUserCreated">This username has been used! 😳</span>
+        <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters! 😏</span>
+        <span *ngIf="isUserCreated">This username has been already created! 😳</span>
         <!-- Password -->
         <input type="password"
                class="txt-password"
@@ -49,7 +49,7 @@
         <span *ngIf="!arePasswordsTheSame">The passwords aren't the same! 🤔</span>
 
         <!-- Submit -->
-        <button class="btn btn-warning"
+        <button class="btn btn-primary"
                 type="submit"
                 [disabled]="isCreating">Sign up <i class="fa-solid fa-arrow-right"></i></button>
       </form>

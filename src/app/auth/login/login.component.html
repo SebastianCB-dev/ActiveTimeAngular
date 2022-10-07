@@ -29,7 +29,7 @@
                formControlName="username"
                (keyup)="changeValueLogin()" required>
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">Your username have to be between 7 and 15 characters! 😏</span>
+        <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters! 😏</span>
         <span *ngIf="isLoginInvalid">Incorrect username and/or password! 😳</span>
         <!-- Password -->
         <input type="password"
@@ -37,9 +37,9 @@
                formControlName="password"
                (keyup)="changeValueLogin()" required>
         <label class="lbl-password">Password</label>
-        <span *ngIf="isInvalidCamp('password')">Your password have to be between 7 and 15 characters! 😏</span>
+        <span *ngIf="isInvalidCamp('password')">Your password has to be between 7 and 15 characters! 😏</span>
         <!-- Submit -->
-        <button class="btn btn-warning"
+        <button class="btn btn-primary"
                 type="submit"
                 [disabled]="isLoading">Sign in <i class="fa-solid fa-arrow-right"></i></button>
       </form>
@@ -56,4 +56,3 @@
     <i class="fas fa-spinner"></i>
   </div>
 </div>
-
