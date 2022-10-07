@@ -1,0 +1,205 @@
+.prices-component {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prices-component .content {
+  width: 80%;
+  height: 800px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prices-component .content .price {
+  width: 370px;
+  height: 70%;
+  border-radius: 12px;
+}
+
+.prices-component .content .price-2 {
+  height: 90%;
+}
+
+.lateral h6 {
+  color: #fff;
+  font-family: 'Sora-Bold';
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.lateral p {
+  color: #fff;
+  font-family: 'Sora-Regular';
+  font-size: 16px;
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.price {
+  overflow: hidden;
+  transition: all 300ms;
+}
+.lateral hr {
+  margin-bottom: 20px;
+}
+
+.price-1 h6 {
+  color: #ccc;
+}
+
+.price-3 h6 {
+  color: rgb(255, 217, 4);
+  text-shadow: 0px 0px 20px rgb(255, 217, 4);
+}
+
+.price-3 {
+  border-top: 2px solid rgb(255, 217, 4);
+  border-right: 2px solid rgb(255, 217, 4);
+  border-bottom: 2px solid rgb(255, 217, 4);  
+}
+
+.price-1 {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.price-2 {
+  border: 2px solid #6680FF;
+  box-shadow: 0px 0px 50px #6680FF;
+}
+
+.price-1 .price-info {
+  font-size: 70px;
+  font-family: 'Sora-Bold';
+  color: #fff;
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 40px;
+}
+
+.lateral .list-including {
+  width: 80%;
+  margin: 0px auto;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.lateral .list-including li {
+  color: #fff;
+  font-family: 'Sora-Regular';
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.check {
+  color: rgb(35, 173, 35);
+  margin-right: 4px;
+}
+
+.lateral button {
+  display: block;
+  width: 200px;
+  margin: 0px auto;
+  height: 50px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #ccc;
+  color: #ccc;
+  font-family: 'Sora-Semibold';
+  font-size: 19px;
+  border-radius: 30px;
+  margin-top: 50px;
+  transition: all 300ms;
+}
+
+.lateral button:hover {
+  border: 2px solid #fff;
+  color: #fff;
+  transform: scale(1.03,1.03);
+}
+
+.denied {
+  color: rgb(182, 34, 34);
+  margin-right: 4px;
+}
+
+.price-3 hr {
+  border: 1px solid rgb(255, 217, 4);
+}
+
+.price-3 .price-info,
+.price-2 .price-info {
+  display: flex;
+  width: 80%;
+  margin: 0px auto;
+  align-items: center;  
+  margin-top: 40px;
+}
+
+.price-3 .price-info h5,
+.price-2 .price-info h5 {
+  font-family: 'Sora-Bold';
+  font-size: 70px;
+  color: #fff;
+}
+
+.price-3 .price-info p,
+.price-2 .price-info p {
+  font-family: 'Sora-Semibold';
+  font-style: italic;
+  margin-left: -40px;
+}
+
+.price-2 .top {
+  height: 60px;
+  border-bottom: 2px solid #6680FF;
+  background-color: #6680FF;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.price-2 h6 {
+  color: #6680FF;
+}
+
+.price-2 hr{ 
+  border: 1px solid #6680FF;
+  margin-bottom: 40px;
+}
+
+.price-2 .top p {
+  font-size: 23px;
+  font-family: 'Sora-Bold';
+  color: #fff;
+}
+
+.price-2 {
+  background-color: #667fff24;
+}
+
+.price-2:hover {
+  background-color: #667fff31;
+}
+
+.price-1 {
+  background-color: rgba(204, 204, 204, 0.13);
+}
+.price-1:hover {
+  background-color: rgba(204, 204, 204, 0.208);
+}
+
+.price-3 {
+  background-color: rgba(255, 217, 4, 0.113);
+}
+.price-3:hover {
+  background-color: rgba(255, 217, 4, 0.169);
+}
