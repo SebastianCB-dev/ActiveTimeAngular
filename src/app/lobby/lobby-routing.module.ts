@@ -22,9 +22,9 @@ const routes: Routes = [
         loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule)
       },
       {
-        path: 'prices',
+        path: 'pricing',
         component: PricesComponent,
-        title: 'Active Time | Prices'
+        title: 'Active Time | Pricing'
       },
       {
         path: 'about',
