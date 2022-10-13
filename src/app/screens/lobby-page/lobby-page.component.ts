@@ -34,7 +34,7 @@ export class LobbyPageComponent implements OnInit, AfterContentInit, OnDestroy {
   const interval_data_1 = setInterval(() => {
     this.id_1 = interval_data_1;
       if(this.data_1 === 1232) {
-        clearInterval(interval_data_1);
+        this.clearIntervalData(interval_data_1);
       }
       this.data_1++;
     }, 1);
@@ -42,7 +42,7 @@ export class LobbyPageComponent implements OnInit, AfterContentInit, OnDestroy {
     const interval_data_2 = setInterval(() => {
       this.id_2 = interval_data_2;
       if (this.data_2 === 711) {
-        clearInterval(interval_data_2);
+        this.clearIntervalData(interval_data_2);
       }
       this.data_2++;
     }, 10);
@@ -50,27 +50,25 @@ export class LobbyPageComponent implements OnInit, AfterContentInit, OnDestroy {
     const interval_data_3 = setInterval(() => {
       this.id_3 = interval_data_3;
       if (this.data_3 === 422) {
-        clearInterval(interval_data_3);
+        this.clearIntervalData(interval_data_3);
       }
       this.data_3++;
     }, 20);
-
-
   }
 
-  clearIntervalData(id: number) {
+  clearIntervalData(id: NodeJS.Timeout) {
     clearInterval(id);
   }
 
   ngOnDestroy() {
     if(this.id_1) {
-      clearInterval(this.id_1);
+      this.clearIntervalData(this.id_1);
     }
     if(this.id_2) {
-      clearInterval(this.id_2);
+      this.clearIntervalData(this.id_2);
     }
     if(this.id_3) {
-      clearInterval(this.id_3);
+      this.clearIntervalData(this.id_3);
     }
   }
 }
