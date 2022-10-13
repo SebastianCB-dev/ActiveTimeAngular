@@ -1,35 +1,37 @@
-<div class="container-lobby">
-
-  <div class="content-lobby">
-    <div class="title animate__animated animate__fadeIn">
-        <h1>Active Time - Menu</h1>
-        <h3>Welcome <span>{{ getUser() }}</span></h3>
-        <h4>What would you want to do?</h4>
+<section class="container-lobby-page">
+  <article class="info">
+    <h3>Task Management</h3>
+    <h4>Welcome to Active Time</h4>
+    <h5>{{ getUser() }}</h5>
+    <app-button-logout></app-button-logout>
+  </article>
+  <article class="buttons">
+    <h5>What do you wanna do?</h5>
+    <button type="button">
+      Create Tasks
+    </button>
+    <button type="button">List Tasks</button>
+    <button type="button">Update Tasks</button>
+    <button type="button">Delete Tasks</button>
+  </article>
+</section>
+<hr>
+<section class="info-tasks">
+  <article class="info">
+    <h3>Tasks Report</h3>
+  </article>
+  <article class="data">
+    <div class="info-data data-1">
+      <h6>Tasks created</h6>
+      <p>{{ data_1 }}</p>
     </div>
-    <!-- TODO: Añadir animación cuando se hace hover la imagen suba un poco -->
-    <div class="options animate__animated animate__fadeInUp">
-      <div class="option option-add"
-           (click)="redirectTo('add-tasks')">
-        <img src="../../../assets/imgs/add.png">
-        <p>Add tasks</p>
-      </div>
-      <div class="option option-read"
-           (click)="redirectTo('list-tasks')">
-        <img src="../../../assets/imgs/search.png">
-        <p>Show tasks</p>
-      </div>
-      <div class="option option-update"
-           (click)="redirectTo('update-tasks')">
-        <img src="../../../assets/imgs/update.png">
-        <p>Update tasks</p>
-      </div>
-      <div class="option option-delete"
-           (click)="redirectTo('delete-tasks')">
-        <img src="../../../assets/imgs/trash.png">
-        <p>Delete tasks</p>
-      </div>
+    <div class="info-data data-2">
+      <h6>Tasks completed</h6>
+      <p>{{ data_2 }}</p>
     </div>
-  </div>
-</div>
-
-<app-button-logout></app-button-logout>
+    <div class="info-data data-3">
+      <h6>Tasks deleted</h6>
+      <p>{{ data_3 }}</p>
+    </div>
+  </article>
+</section>
