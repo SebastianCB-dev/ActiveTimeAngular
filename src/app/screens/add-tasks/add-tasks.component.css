@@ -125,7 +125,6 @@
 }
 
 .container-main .content form input[type="text"]:focus {
-  width: 70%;
   border: 2px solid #ffa500;
 }
 
@@ -214,4 +213,3 @@
     transform: rotate(720deg);
   }
 }
-
