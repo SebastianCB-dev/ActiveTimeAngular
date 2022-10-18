@@ -53,7 +53,8 @@ export class AddTasksComponent implements OnInit {
       description: this.miFormulario.controls["task-description"].value,
       priority: this.miFormulario.controls["priority"].value,
       initialDate: this.miFormulario.controls["initial-date"].value,
-      finalDate: this.miFormulario.controls["final-date"].value
+      finalDate: this.miFormulario.controls["final-date"].value,
+      isCompleted: false
     };
     await this.fs.registerTask(task);
     this.isCreating = false;

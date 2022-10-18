@@ -5,7 +5,11 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore,
          doc,
          getDoc,
-         setDoc } from 'firebase/firestore';
+         getDocs,
+         setDoc,
+         query,
+         collection,
+         where} from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +48,18 @@ export class FirebaseService {
 
   async registerTask( task: any ) {
     await setDoc(doc(this.db, "tasks", task.id), task);
+  }
+
+  async getTasksByUser( user: string ) {
+    if(!user) return [];
+    const q = query(collection(this.db, "tasks"), where("user", "==", user));
+    let array_tasks: any = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      array_tasks.push(doc.data());
+    });
+
+    return array_tasks;
   }
 }

@@ -8,28 +8,27 @@
       <h4>Pending</h4>
     </div>
     <div class="tasks-box">
-      <div class="task">
+      <div class="task" *ngFor="let task of tasks_no_completed">
         <!--Title -->
-        <h2>Jugar League Of Legends.</h2>
+        <h2>{{ task['name'] }}</h2>
         <!-- Description -->
-        <p>Jugar League Of Legends at 5:30 pm.<p>
-        <!-- Priority -->
+        <p>{{ task['description'] }}
+        <p>
+          <!-- Priority -->
         <div class="priority">
           <p>Priority: </p>
-          <h6 class="Medium">Medium</h6>
+          <span [class]="task['priority']">{{ task['priority'] }}</span>
         </div>
         <!-- Start date -->
         <div class="start-date">
-          <p>Start</p>
-          <span>2022-08-10</span>
+          <p>Start: </p>
+          <span>{{ task['initialDate'] }}</span>
         </div>
         <!-- End date -->
         <div class="end-date">
-          <p>End</p>
-          <span>2022-08-10</span>
+          <p>End: </p>
+          <span>{{ task['finalDate'] }}</span>
         </div>
-        <!-- Status -->
-        <h4>Pending</h4>
       </div>
 
     </div>
@@ -41,7 +40,28 @@
     </div>
 
     <div class="tasks-box">
-
+      <div class="task" *ngFor="let task of tasks_completed">
+        <!--Title -->
+        <h2>{{ task['name'] }}</h2>
+        <!-- Description -->
+        <p>{{ task['description'] }}
+        <p>
+          <!-- Priority -->
+        <div class="priority">
+          <p>Priority: </p>
+          <span [class]="task['priority']">{{ task['priority'] }}</span>
+        </div>
+        <!-- Start date -->
+        <div class="start-date">
+          <p>Start: </p>
+          <span>{{ task['initialDate'] }}</span>
+        </div>
+        <!-- End date -->
+        <div class="end-date">
+          <p>End: </p>
+          <span>{{ task['finalDate'] }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
