@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -9,7 +11,7 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,28 +19,40 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate, CanLoad {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private fs: FirebaseService
   ) {
   }
 
-   canActivate(
+   async canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(!localStorage.getItem('att-session')) {
-      this.router.navigateByUrl('/auth/login');
+    state: RouterStateSnapshot): Promise<boolean | UrlTree>  {
+    const userSession = localStorage.getItem('att-session');
+    if(!userSession) {
+      return this.router.navigateByUrl('/auth/login');
+    }
+    const user = await this.fs.getUser(userSession);
+    if(!user) {
+      localStorage.removeItem('att-session');
+      return this.router.navigateByUrl('/auth/login');
     }
     return true;
-
   }
 
-   canLoad(
+  async canLoad(
     route: Route,
-    segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    segments: UrlSegment[]): Promise<boolean> {
 
-    if(!localStorage.getItem('att-session')) {
-      this.router.navigateByUrl('/auth/login');
-    }
-    return true;
+     const userSession = localStorage.getItem('att-session');
+     if (!userSession) {
+       return this.router.navigateByUrl('/auth/login');
+     }
+     const user = await this.fs.getUser(userSession);
+     if (!user) {
+       localStorage.removeItem('att-session');
+       return this.router.navigateByUrl('/auth/login');
+     }
+     return true;
 
   }
 }
