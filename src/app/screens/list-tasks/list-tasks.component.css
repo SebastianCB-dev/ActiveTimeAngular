@@ -24,6 +24,11 @@
   font-family: 'Sora-SemiBold', sans-serif;
   font-size: 28px;
 }
+
+#list-tasks-container .completed {
+  margin-bottom: 80px;
+}
+
 #list-tasks-container .completed .title h4 {
   color: #00B327;
 }
@@ -32,6 +37,8 @@
 }
 #list-tasks-container hr {
   border: 1px solid #fff;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 #list-tasks-container .tasks-box {
   display: flex;
@@ -89,23 +96,23 @@
 }
 
 #list-tasks-container .tasks-box .task .priority .Medium {
-  background-color: orange;
+  background-color: rgb(255, 166, 0);
 }
 
 #list-tasks-container .tasks-box .task .priority .High {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
 }
 
 #list-tasks-container .tasks-box .task .priority .Low {
-  background-color: green;
+  background-color: rgb(0, 128, 0);
 }
 
 #list-tasks-container .tasks-box .task .start-date span {
-  background-color: green;
+  background-color: rgba(20, 92, 20, 0.634);
 }
 
 #list-tasks-container .tasks-box .task .end-date span {
-  background-color: red;
+  background-color: rgba(124, 22, 22, 0.69);
 }
 
 #list-tasks-container .tasks-box .task h4 {
@@ -121,10 +128,86 @@
 
 #list-tasks-container .no-completed .tasks-box .task:hover {
   transform: scale(1.02, 1.02);
-  border: 2px solid orange;
+  border: 2px solid rgb(255, 166, 0);
 }
 
 #list-tasks-container .completed .tasks-box .task:hover {
   transform: scale(1.02, 1.02);
-  border: 2px solid green;
+  border: 2px solid rgb(0, 128, 0);
+}
+
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(3, 3, 3, 0.55);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.loading .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading .content i {
+  text-align: center;
+  font-size: 100px;
+  color: rgb(255, 166, 0);
+  animation: loading infinite 4s linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+#tasks-pending,
+#tasks-completed {
+  width: 100%;
+  height: 300px;
+}
+
+#tasks-pending p,
+#tasks-completed p {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Sora-Regular', sans-serif;
+  color: #fff;
+}
+
+#tasks-pending img,
+#tasks-completed img {
+  display: block;
+  width: 200px;
+  margin: 0px auto;
+}
+
+#tasks-pending button,
+#tasks-completed button {
+  display: block;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+.orange {
+  color: rgb(255, 166, 0);
+}
+
+.green {
+  color: #00B327;
 }

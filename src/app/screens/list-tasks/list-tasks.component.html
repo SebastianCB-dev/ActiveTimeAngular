@@ -30,7 +30,13 @@
           <span>{{ task['finalDate'] }}</span>
         </div>
       </div>
-
+      <!-- IF NOT EXISTS TASKS-->
+      <div id="tasks-pending"
+            *ngIf="!isLoading && tasks_no_completed.length === 0">
+        <p>You don't have any task <span class="orange">pending</span>.</p>
+        <img src="../../../assets/imgs/no_completed_tasks.svg" alt="Pending tasks image">
+        <button type="button" class="btn btn-warning" routerLink="/tasks/add-tasks">Create a task</button>
+      </div>
     </div>
   </div>
   <hr>
@@ -62,6 +68,19 @@
           <span>{{ task['finalDate'] }}</span>
         </div>
       </div>
+      <!-- IF NOT EXISTS TASKS-->
+      <div id="tasks-completed" *ngIf="!isLoading && tasks_completed.length === 0">
+        <p>You don't have any task <span class="green">completed</span>.</p>
+        <img src="../../../assets/imgs/completed_tasks.svg" alt="Pending tasks image">
+        <button type="button" class="btn btn-success"
+        routerLink="/tasks/update-tasks">Complete a task</button>
+      </div>
     </div>
   </div>
 </section>
+
+<div *ngIf="isLoading" class="loading">
+  <div class="content">
+    <i class="fas fa-spinner"></i>
+  </div>
+</div>
