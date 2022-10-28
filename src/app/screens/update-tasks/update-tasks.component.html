@@ -1,1 +1,39 @@
+<section class="container-tasks">
+  <div class="title">
+    <h3>Update Tasks</h3>
+    <p>Click on any task to start editing.</p>
+  </div>
+  <!-- Todas las tareas -->
+  <article class="container-update-tasks">
+    <div class="all-tasks box">
+      <div class="tasks"
+           *ngIf="tasks">
+        <h3>These are your tasks:</h3>
+        <button *ngFor="let task of tasks; let i = index"
+                type="button"
+                (click)="updateTask(i)">{{ task.name }}</button>
+      </div>
 
+    </div>
+    <!-- Caja para editar -->
+    <div class="edit-task box">
+      
+    </div>
+
+  </article>
+
+
+
+</section>
+
+
+<div *ngIf="isLoading" class="loading">
+  <div class="content">
+    <i class="fas fa-spinner"></i>
+  </div>
+</div>
+
+<button type="button" id="button-back" class="btn btn-secondary" routerLink="tasks/menu">
+  Volver
+  <i class="fa-solid fa-rotate-left"></i>
+</button>

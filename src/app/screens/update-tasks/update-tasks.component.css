@@ -1,0 +1,111 @@
+.container-tasks {
+  width: 100%;
+  height: 100%;
+}
+.container-tasks .title h3 {
+  text-align: center;
+  font-family: 'Sora-SemiBold';
+  color: #6680FF;
+  font-size: 45px;
+  border-bottom: 3px solid #6680FF;
+  width: max-content;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+
+.container-tasks .title p {
+  color: #ccc;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Sora-Regular';
+}
+
+.container-tasks .container-update-tasks {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.container-tasks .container-update-tasks .box {
+  height: 100%;
+  width: 45%;
+}
+.container-tasks .container-update-tasks .box .tasks h3 {
+  color: #fff;
+  font-family: 'Sora-SemiBold';
+  margin-bottom: 30px;
+}
+.container-tasks .container-update-tasks .box .tasks button {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  border: 2px solid rgb(35, 35, 35);
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Sora-Regular', sans-serif;
+  text-overflow: ellipsis;
+  -o-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.container-tasks .container-update-tasks .box .tasks button:hover {
+  border: 2px solid #ccc;
+  color: #6680FF;
+  background-color: rgb(4, 4, 4);
+  box-shadow: 0px 0px 40px #000;
+}
+
+
+#button-back {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(3, 3, 3, 0.55);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.loading .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading .content i {
+  text-align: center;
+  font-size: 100px;
+  color: rgb(255, 166, 0);
+  animation: loading infinite 4s linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
