@@ -11,13 +11,50 @@
         <h3>These are your tasks:</h3>
         <button *ngFor="let task of tasks; let i = index"
                 type="button"
-                (click)="updateTask(i)">{{ task.name }}</button>
+                (click)="changeDataTask(i)">{{ task.name }}</button>
       </div>
-
     </div>
     <!-- Caja para editar -->
     <div class="edit-task box">
-      
+      <div class="box-update">
+        <form id="form-update-task"
+              (ngSumbit)="updateTask()"
+              autocomplete="off"
+              [formGroup]="miFormulario">
+          <p>Make sure all the fields are correctly fill.</p>
+          <label class="title-label">Task name</label>
+          <input type="text" 
+                 formControlName="task-name" 
+                 (keypress)="writing()" 
+                 placeholder="Play League Of Legends...">
+          
+          
+          <!-- Task Description -->
+          <label>Task Description</label>
+          <textarea type="text" formControlName="task-description" (keypress)="writing()"
+            placeholder="Play League of Legends at 5:30 pm ..." cols="40" rows="3"></textarea>
+          
+          <!-- Priority -->
+          <label>Priority</label>
+          <select name="select" formControlName="priority">
+            <option value="High" class="option1">High</option>
+            <option value="Medium" class="option2" selected>Medium</option>
+            <option value="Low" class="option3">Low</option>
+          </select>
+          
+          <!-- Initial Date-->
+          <label>Initial Date</label>
+          <input type="date" formControlName="initial-date" [min]="getMinDate()">
+          
+          <!-- Final Date -->
+          <label>Final Date</label>
+          <input type="date" formControlName="final-date" [min]="getMinDate()">
+          <div class="buttons">
+            <button type="button" [disabled]="!isThereATask" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
+            <button type="submit" [disabled]="!miFormulario.valid" class="btn btn-warning">Update</button>
+          </div>
+        </form>
+      </div>
     </div>
 
   </article>

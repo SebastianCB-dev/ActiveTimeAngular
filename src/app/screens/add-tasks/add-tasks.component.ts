@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { FirebaseService } from '../../services/firebase.service';
 import { SoundsService } from 'src/app/services/sounds.service';
 
 // ID
 import { v4 as uuidv4 } from 'uuid';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-add-tasks',
   templateUrl: './add-tasks.component.html',
@@ -12,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class AddTasksComponent implements OnInit {
 
-  miFormulario: UntypedFormGroup = this.fb.group({
+  miFormulario: FormGroup = this.fb.group({
     "task-name": [,[Validators.required, Validators.minLength(1)]],
     "task-description": [,[Validators.required, Validators.minLength(1)]],
     "priority": [, [Validators.required]],
@@ -23,7 +25,7 @@ export class AddTasksComponent implements OnInit {
   isValidForm: boolean = true;
   isCreating: boolean = false;
   constructor(
-    private fb: UntypedFormBuilder,
+    private fb: FormBuilder,
     private fs: FirebaseService,
     private ss: SoundsService
   ) { }
