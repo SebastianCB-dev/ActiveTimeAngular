@@ -11,7 +11,14 @@ export class UpdateTasksComponent implements OnInit {
 
   isLoading: boolean = false;
   tasks: any = [];
-  currentTask = {};
+  currentTask = {
+    "name": "",
+    "description": "",
+    "priority": "",
+    "initialDate": "",
+    "finalDate": ""
+  };
+
   isThereATask: boolean = false;
 
   miFormulario: FormGroup = this.fb.group({
@@ -40,11 +47,11 @@ export class UpdateTasksComponent implements OnInit {
     const data = await this.fs.getTasksByUser(localStorage.getItem('att-session') || '');
     this.tasks = data;
     this.isLoading = false;
-    console.log(data);
   }
 
   changeDataTask(index: number) {
-    this.enableForm();
+    this.enableForm();    
+    this.currentTask = this.tasks[index];
     this.isThereATask = true;
   }
 

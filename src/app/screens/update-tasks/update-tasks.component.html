@@ -26,13 +26,13 @@
           <input type="text" 
                  formControlName="task-name" 
                  (keypress)="writing()" 
-                 placeholder="Play League Of Legends...">
-          
-          
+                 placeholder="Play League Of Legends..."
+                 [value]="currentTask['name']">
+                    
           <!-- Task Description -->
           <label>Task Description</label>
-          <textarea type="text" formControlName="task-description" (keypress)="writing()"
-            placeholder="Play League of Legends at 5:30 pm ..." cols="40" rows="3"></textarea>
+          <textarea formControlName="task-description" (keypress)="writing()"
+            placeholder="Play League of Legends at 5:30 pm ..." cols="40" rows="3" [value]="currentTask['description']"></textarea>
           
           <!-- Priority -->
           <label>Priority</label>
@@ -44,14 +44,19 @@
           
           <!-- Initial Date-->
           <label>Initial Date</label>
-          <input type="date" formControlName="initial-date" [min]="getMinDate()">
+          <input type="date" 
+                 formControlName="initial-date" 
+                 [min]="getMinDate()" 
+                 [value]="currentTask['initialDate']">
           
           <!-- Final Date -->
           <label>Final Date</label>
-          <input type="date" formControlName="final-date" [min]="getMinDate()">
+          <input type="date" formControlName="final-date" [min]="getMinDate()" [value]="currentTask['finalDate']">
           <div class="buttons">
             <button type="button" [disabled]="!isThereATask" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
-            <button type="submit" [disabled]="!miFormulario.valid" class="btn btn-warning">Update</button>
+            <button type="submit" 
+                    [disabled]="!miFormulario.valid" 
+                    class="btn btn-warning">Update</button>
           </div>
         </form>
       </div>
