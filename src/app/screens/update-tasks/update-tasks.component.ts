@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { delay } from 'rxjs';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -53,10 +54,12 @@ export class UpdateTasksComponent implements OnInit {
     this.enableForm();    
     this.currentTask = this.tasks[index];
     this.isThereATask = true;
+    this.miFormulario.setValue({ 'task-name': this.tasks[index]['name'], 'task-description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initial-date': this.tasks[index]['initialDate'], 'final-date': this.tasks[index]['finalDate'] });
+    console.log(this.miFormulario);
   }
 
   updateTask() {
-    
+    console.log(this.miFormulario.controls);
   }
 
   writing() {
