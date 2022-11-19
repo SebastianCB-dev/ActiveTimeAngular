@@ -24,14 +24,14 @@
           <p>Make sure all the fields are correctly fill.</p>
           <label class="title-label">Task name</label>
           <input type="text" 
-                 formControlName="task-name" 
+                 formControlName="name" 
                  (keypress)="writing()" 
                  placeholder="Play League Of Legends..."
                  [value]="currentTask['name']">
                     
           <!-- Task Description -->
           <label>Task Description</label>
-          <textarea formControlName="task-description" (keypress)="writing()"
+          <textarea formControlName="description" (keypress)="writing()"
             placeholder="Play League of Legends at 5:30 pm ..." cols="40" rows="3" [value]="currentTask['description']"></textarea>
           
           <!-- Priority -->
@@ -45,13 +45,13 @@
           <!-- Initial Date-->
           <label>Initial Date</label>
           <input type="date" 
-                 formControlName="initial-date" 
+                 formControlName="initialDate" 
                  [min]="getMinDate()" 
                  [value]="currentTask['initialDate']">
           
           <!-- Final Date -->
           <label>Final Date</label>
-          <input type="date" formControlName="final-date" [min]="getMinDate()" [value]="currentTask['finalDate']">
+          <input type="date" formControlName="finalDate" [min]="getMinDate()" [value]="currentTask['finalDate']">
           <div class="buttons">
             <button type="button" [disabled]="!isThereATask" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
             <button type="submit" 

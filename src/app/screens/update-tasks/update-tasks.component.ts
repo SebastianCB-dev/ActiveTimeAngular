@@ -17,17 +17,18 @@ export class UpdateTasksComponent implements OnInit {
     "description": "",
     "priority": "",
     "initialDate": "",
-    "finalDate": ""
+    "finalDate": "",
+    "id": "",
   };
 
   isThereATask: boolean = false;
 
   miFormulario: FormGroup = this.fb.group({
-    "task-name": [, [Validators.required, Validators.minLength(1)]],
-    "task-description": [, [Validators.required, Validators.minLength(1)]],
+    "name": [, [Validators.required, Validators.minLength(1)]],
+    "description": [, [Validators.required, Validators.minLength(1)]],
     "priority": [, [Validators.required]],
-    "initial-date": [, [Validators.required]],
-    "final-date": [, [Validators.required]]
+    "initialDate": [, [Validators.required]],
+    "finalDate": [, [Validators.required]]
   })
   
   isValidForm: boolean = true;
@@ -39,7 +40,7 @@ export class UpdateTasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.clearForm();
-    this.miFormulario.get('task-name')?.disable();
+    this.miFormulario.get('name')?.disable();
     this.disableForm();
   }
 
@@ -54,12 +55,16 @@ export class UpdateTasksComponent implements OnInit {
     this.enableForm();    
     this.currentTask = this.tasks[index];
     this.isThereATask = true;
-    this.miFormulario.setValue({ 'task-name': this.tasks[index]['name'], 'task-description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initial-date': this.tasks[index]['initialDate'], 'final-date': this.tasks[index]['finalDate'] });
+    this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 'description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initialDate': this.tasks[index]['initialDate'], 'finalDate': this.tasks[index]['finalDate'] });
     console.log(this.miFormulario);
   }
 
-  updateTask() {
-    console.log(this.miFormulario.controls);
+  async updateTask() {   
+    // TODO: hacer validaciones
+    this.isLoading = true;
+    this.updateValues();
+    await this.fs.updateTask(this.currentTask);
+    this.isLoading = false;
   }
 
   writing() {
@@ -73,31 +78,38 @@ export class UpdateTasksComponent implements OnInit {
   clearForm() {
 
     this.miFormulario.reset({
-      "task-name": '',
-      "task-description": '',
+      "name": '',
+      "description": '',
       "priority": 'Medium',
-      "initial-date": '',
-      "final-date": ''
+      "initialDate": '',
+      "finalDate": ''
     });
   }
 
   disableForm() {
-    this.miFormulario.get('task-name')?.disable();
-    this.miFormulario.get('task-description')?.disable();
+    this.miFormulario.get('name')?.disable();
+    this.miFormulario.get('description')?.disable();
     this.miFormulario.get('priority')?.disable();
-    this.miFormulario.get('initial-date')?.disable();
-    this.miFormulario.get('final-date')?.disable();
+    this.miFormulario.get('initialDate')?.disable();
+    this.miFormulario.get('finalDate')?.disable();
   }
   enableForm() {
-    this.miFormulario.get('task-description')?.enable();
+    this.miFormulario.get('description')?.enable();
     this.miFormulario.get('priority')?.enable();
-    this.miFormulario.get('initial-date')?.enable();
-    this.miFormulario.get('final-date')?.enable();
+    this.miFormulario.get('initialDate')?.enable();
+    this.miFormulario.get('finalDate')?.enable();
   }
 
   cancelUpdate() {
     this.isThereATask = false;
     this.clearForm();
     this.disableForm();
+  }
+
+  updateValues() {
+    this.currentTask.description = this.miFormulario.get('description')?.value;
+    this.currentTask.priority = this.miFormulario.get('priority')?.value;
+    this.currentTask.initialDate = this.miFormulario.get('initialDate')?.value;
+    this.currentTask.finalDate = this.miFormulario.get('finalDate')?.value;
   }
 }

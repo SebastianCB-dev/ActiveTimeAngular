@@ -9,7 +9,8 @@ import { getFirestore,
          setDoc,
          query,
          collection,
-         where} from 'firebase/firestore';
+         where,
+         updateDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +60,13 @@ export class FirebaseService {
       // doc.data() is never undefined for query doc snapshots
       array_tasks.push(doc.data());
     });
-
+    
     return array_tasks;
+  }
+
+  async updateTask(task: any) {
+
+    await updateDoc(doc(this.db, "tasks", task['id']), task);
+    console.log('Cambio existoso');
   }
 }
