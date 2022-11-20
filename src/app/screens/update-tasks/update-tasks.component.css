@@ -196,6 +196,8 @@
 .msg-alert {
   position: fixed;
   top: 0;
-  width: max-content;
+  width: 250px;
   left: 50%;
+  text-align: center;
+  margin-left: -125px;
 }

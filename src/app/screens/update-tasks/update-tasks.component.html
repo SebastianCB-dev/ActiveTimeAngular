@@ -81,11 +81,15 @@
 </button>
 
 <!-- Mensaje de error -->
-<div class="alert alert-danger msg-alert" role="alert">
+<div class="alert alert-danger msg-alert" 
+     role="alert"
+     *ngIf="!(wasUpdated) && touchButton">
   Please, fill the form correctly.
 </div>
 <!-- Mensaje de actualizada la tarea -->
 
-<div class="alert alert-success msg-alert" role="alert">
+<div class="alert alert-success msg-alert" 
+     role="alert"
+     *ngIf="wasUpdated && touchButton">
   The task was updated.
 </div>

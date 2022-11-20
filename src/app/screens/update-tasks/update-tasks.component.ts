@@ -32,6 +32,8 @@ export class UpdateTasksComponent implements OnInit {
   
   isValidForm: boolean = true;
   isCreating: boolean = false;
+  wasUpdated: boolean = false;
+  touchButton: boolean = false;
   constructor(private fs: FirebaseService,
     private fb: FormBuilder) {
     this.getTasks();    
@@ -51,6 +53,8 @@ export class UpdateTasksComponent implements OnInit {
   }
 
   changeDataTask(index: number) {
+    this.wasUpdated = false;
+    this.touchButton = false;
     this.enableForm();    
     this.currentTask = this.tasks[index];
     this.isThereATask = true;
@@ -58,14 +62,23 @@ export class UpdateTasksComponent implements OnInit {
     console.log(this.miFormulario);
   }
 
-  async updateTask() {   
-    // TODO: hacer validaciones
+  async updateTask() { 
+
+    if(!(this.miFormulario.valid) ||
+       (this.miFormulario.get('initialDate')?.value > this.miFormulario.get('finalDate')?.value ) || this.miFormulario.get('description')?.value.trim().length === 0){      
+      this.touchButton = true;
+      this.wasUpdated = false;
+      return;
+    }
+
     this.isLoading = true;
     this.updateValues();
     await this.fs.updateTask(this.currentTask);
     await this.getTasks();
+    this.touchButton = true;
     this.cancelUpdate();
     this.isLoading = false;
+    this.wasUpdated = true;
   }
 
   writing() {
