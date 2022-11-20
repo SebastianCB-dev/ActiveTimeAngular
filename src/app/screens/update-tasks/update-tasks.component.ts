@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { delay } from 'rxjs';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -64,6 +63,8 @@ export class UpdateTasksComponent implements OnInit {
     this.isLoading = true;
     this.updateValues();
     await this.fs.updateTask(this.currentTask);
+    await this.getTasks();
+    this.cancelUpdate();
     this.isLoading = false;
   }
 
