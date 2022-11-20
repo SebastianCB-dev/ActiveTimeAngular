@@ -63,7 +63,20 @@
   background-color: rgb(4, 4, 4);
   box-shadow: 0px 0px 40px #000;
 }
-
+.container-tasks .container-update-tasks .box .tasks .no-tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-tasks .container-update-tasks .box .tasks .no-tasks img {
+  width: 320px;
+  margin-bottom: 20px;
+}
+.container-tasks .container-update-tasks .box .tasks .no-tasks p {
+  color: #BD5832;
+  font-family: 'Sora-SemiBold';
+  font-size: 22px;
+}
 .container-tasks .container-update-tasks .edit-task .box-update {
   width: 600px;
   margin: 0px auto;

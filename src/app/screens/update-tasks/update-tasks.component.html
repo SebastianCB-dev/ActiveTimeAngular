@@ -12,6 +12,14 @@
         <button *ngFor="let task of tasks; let i = index"
                 type="button"
                 (click)="changeDataTask(i)">{{ task.name }}</button>
+        <!-- Si no hay tareas -->
+        <div class="no-tasks"
+             *ngIf="tasks.length <= 0">
+          <img src="../../../assets/imgs/no-task.svg" alt="Image No Tasks">
+          <p>You do not have any tasks 😒</p>
+          <a type="button" class="btn btn-success"
+            routerLink="/tasks/add-tasks">Create Tasks</a>
+        </div>
       </div>
     </div>
     <!-- Caja para editar -->
