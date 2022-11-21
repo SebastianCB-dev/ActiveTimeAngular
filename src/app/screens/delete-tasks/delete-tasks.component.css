@@ -1,0 +1,169 @@
+.container-delete-tasks h3 {
+  text-align: center;
+  font-family: 'Sora-SemiBold';
+  color: #6680FF;
+  font-size: 45px;
+  border-bottom: 3px solid #6680FF;
+  width: max-content;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+
+.container-delete-tasks .title > p {
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Sora-SemiBold';
+}
+
+.container-tasks {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.container-tasks .task {
+  width: 350px;
+  height: min-content;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  padding: 15px;
+  transition: all 300ms;
+}
+
+.container-tasks .task h2 {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 25px;
+  font-family: 'Sora-SemiBold', sans-serif;
+  transition: all 300ms;
+}
+
+.container-tasks .task>p {
+  color: #ccc;
+  font-family: 'Sora-Regular', sans-serif;
+  margin-top: 10px;
+}
+
+.container-tasks .task .priority,
+.container-tasks .task .start-date,
+.container-tasks .task .end-date {
+  display: flex;
+  color: #fff;
+  font-family: 'Sora-SemiBold', sans-serif;
+  align-items: center;
+}
+
+.container-tasks .task .priority p,
+.container-tasks .task .start-date p,
+.container-tasks .task .end-date p {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.container-tasks .task .priority span,
+.container-tasks .task .start-date span,
+.container-tasks .task .end-date span {
+  border-radius: 12px;
+  padding: 4px 10px 4px 10px;
+}
+
+.container-tasks .task .priority .Medium {
+  background-color: rgb(255, 166, 0);
+}
+
+.container-tasks .task .priority .High {
+  background-color: rgb(255, 0, 0);
+}
+
+.container-tasks .task .priority .Low {
+  background-color: rgb(0, 128, 0);
+}
+
+.container-tasks .task .start-date span {
+  background-color: rgba(20, 92, 20, 0.634);
+}
+
+.container-tasks .task .end-date span {
+  background-color: rgba(124, 22, 22, 0.69);
+}
+
+.container-tasks .task h4 {
+  text-align: center;
+  color: orange;
+}
+
+.container-tasks .priority,
+.container-tasks .start-date,
+.container-tasks .end-date {
+  margin-bottom: 15px;
+}
+
+.container-tasks .task:hover {
+  transform: scale(1.02, 1.02);
+  border: 2px solid rgb(255, 166, 0);
+  cursor: pointer;
+}
+
+.container-tasks .task:hover {
+  transform: scale(1.02, 1.02);
+  border: 2px solid #6680FF;
+}
+
+.container-tasks .task:hover > h2 {
+  color: #6680FF;
+}
+
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(3, 3, 3, 0.55);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.loading .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading .content i {
+  text-align: center;
+  font-size: 100px;
+  color: rgb(255, 166, 0);
+  animation: loading infinite 4s linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+#button-back {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

@@ -1,1 +1,53 @@
-<p>delete-tasks works!</p>
+<section class="container-delete-tasks">
+  <div class="title">
+    <h3>Delete Tasks</h3>
+    <p>Click on the task to delete.</p>
+  </div>
+  <div class="container-tasks">
+      <div class="task" 
+           *ngFor="let task of tasks"
+           (click)="deleteTask(task)">
+        <!--Title -->
+        <h2>{{ task['name'] }}</h2>
+        <!-- Description -->
+        <p>{{ task['description'] }}
+        <p>
+          <!-- Priority -->
+        <div class="priority">
+          <p>Priority: </p>
+          <span [class]="task['priority']">{{ task['priority'] }}</span>
+        </div>
+        <!-- Start date -->
+        <div class="start-date">
+          <p>Start: </p>
+          <span>{{ task['initialDate'] }}</span>
+        </div>
+        <!-- End date -->
+        <div class="end-date">
+          <p>End: </p>
+          <span>{{ task['finalDate'] }}</span>
+        </div>
+      </div>
+      <!-- IF NOT EXISTS TASKS-->
+      <div id="tasks-completed" *ngIf="taskCharged && tasks.length === 0">
+        <p>You don't have any task <span class="green">completed</span>.</p>
+        <img src="../../../assets/imgs/completed_tasks.svg" alt="Pending tasks image">
+        <button type="button" class="btn btn-success" routerLink="/tasks/update-tasks">Complete a task</button>
+      </div>
+    </div>
+</section>
+
+
+
+
+
+<div *ngIf="isLoading" class="loading">
+  <div class="content">
+    <i class="fas fa-spinner"></i>
+  </div>
+</div>
+
+<button type="button" id="button-back" class="btn btn-secondary" routerLink="tasks/menu">
+  Volver
+  <i class="fa-solid fa-rotate-left"></i>
+</button>
