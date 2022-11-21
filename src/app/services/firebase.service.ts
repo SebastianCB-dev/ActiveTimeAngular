@@ -10,7 +10,8 @@ import { getFirestore,
          query,
          collection,
          where,
-         updateDoc } from 'firebase/firestore';
+         updateDoc,
+         deleteDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -65,8 +66,10 @@ export class FirebaseService {
   }
 
   async updateTask(task: any) {
-
     await updateDoc(doc(this.db, "tasks", task['id']), task);
-    console.log('Cambio existoso');
+  }
+
+  async deleteTask(id: string) {
+    await deleteDoc(doc(this.db, "tasks", id));
   }
 }

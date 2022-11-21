@@ -38,7 +38,7 @@ export class DeleteTasksComponent implements OnInit {
     }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        console.log('Deleting...');
+        await this.fs.deleteTask(task['id']);
         await this.getData();
       }
     });
