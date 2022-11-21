@@ -14,7 +14,7 @@
                 (click)="changeDataTask(i)">{{ task.name }}</button>
         <!-- Si no hay tareas -->
         <div class="no-tasks"
-             *ngIf="tasks.length <= 0">
+             *ngIf="tasks.length <= 0 && taskCharged">
           <img src="../../../assets/imgs/no-task.svg" alt="Image No Tasks">
           <p>You do not have any tasks 😒</p>
           <a type="button" class="btn btn-success"
@@ -31,11 +31,13 @@
               [formGroup]="miFormulario">
           <p>Make sure all the fields are correctly fill.</p>
           <label class="title-label">Task name</label>
+          <!-- Task name -->
           <input type="text" 
                  formControlName="name" 
                  (keypress)="writing()" 
                  placeholder="Play League Of Legends..."
-                 [value]="currentTask['name']">
+                 [value]="currentTask['name']"
+                 class="purple center">
                     
           <!-- Task Description -->
           <label>Task Description</label>
@@ -60,6 +62,14 @@
           <!-- Final Date -->
           <label>Final Date</label>
           <input type="date" formControlName="finalDate" [min]="getMinDate()" [value]="currentTask['finalDate']">
+
+          <!-- Completed -->
+          <label>Status</label>
+          <select name="select2" formControlName="isCompleted">
+            <option value="true" class="option1">Completed</option>
+            <option value="false" class="option2" selected>Pending</option>
+          </select>
+
           <div class="buttons">
             <button type="button" [disabled]="!isThereATask" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
             <button type="submit" 

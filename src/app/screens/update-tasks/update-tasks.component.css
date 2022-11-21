@@ -80,7 +80,7 @@
 .container-tasks .container-update-tasks .edit-task .box-update {
   width: 600px;
   margin: 0px auto;
-  height: 100%;
+  height: 650px;
   background-color: #000;
   border-radius: 7px;
   display: flex;
@@ -92,6 +92,9 @@
   height: 80%;
 }
 
+#form-update-task {
+  font-family: 'Sora-Regular';
+}
 #form-update-task p {
   color: rgb(155, 123, 26);
   font-family: 'Sora-Regular';
@@ -161,6 +164,7 @@
   width: 80%;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 20px;
 }
 
 #button-back {
@@ -213,4 +217,13 @@
   left: 50%;
   text-align: center;
   margin-left: -125px;
+}
+
+.purple {
+  font-weight: bold;
+  color: #6680FF;
+}
+
+.center {
+  text-align: center;
 }

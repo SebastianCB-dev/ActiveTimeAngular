@@ -8,7 +8,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
   styleUrls: ['./update-tasks.component.css']
 })
 export class UpdateTasksComponent implements OnInit {
-
+  taskCharged: boolean = false;
   isLoading: boolean = false;
   tasks: any = [];
   currentTask = {
@@ -18,6 +18,7 @@ export class UpdateTasksComponent implements OnInit {
     "initialDate": "",
     "finalDate": "",
     "id": "",
+    "isCompleted": false
   };
 
   isThereATask: boolean = false;
@@ -27,7 +28,8 @@ export class UpdateTasksComponent implements OnInit {
     "description": [, [Validators.required, Validators.minLength(1)]],
     "priority": [, [Validators.required]],
     "initialDate": [, [Validators.required]],
-    "finalDate": [, [Validators.required]]
+    "finalDate": [, [Validators.required]],
+    "isCompleted": [, [Validators.required]]
   })
   
   isValidForm: boolean = true;
@@ -50,6 +52,7 @@ export class UpdateTasksComponent implements OnInit {
     const data = await this.fs.getTasksByUser(localStorage.getItem('att-session') || '');
     this.tasks = data;
     this.isLoading = false;
+    this.taskCharged = true;
   }
 
   changeDataTask(index: number) {
@@ -58,8 +61,7 @@ export class UpdateTasksComponent implements OnInit {
     this.enableForm();    
     this.currentTask = this.tasks[index];
     this.isThereATask = true;
-    this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 'description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initialDate': this.tasks[index]['initialDate'], 'finalDate': this.tasks[index]['finalDate'] });
-    console.log(this.miFormulario);
+    this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 'description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initialDate': this.tasks[index]['initialDate'], 'finalDate': this.tasks[index]['finalDate'], 'isCompleted': this.tasks[index]['isCompleted'] });
   }
 
   async updateTask() { 
@@ -73,6 +75,7 @@ export class UpdateTasksComponent implements OnInit {
 
     this.isLoading = true;
     this.updateValues();
+    console.log(this.currentTask);
     await this.fs.updateTask(this.currentTask);
     await this.getTasks();
     this.touchButton = true;
@@ -96,7 +99,8 @@ export class UpdateTasksComponent implements OnInit {
       "description": '',
       "priority": 'Medium',
       "initialDate": '',
-      "finalDate": ''
+      "finalDate": '',
+      "isCompleted": true
     });
   }
 
@@ -106,12 +110,14 @@ export class UpdateTasksComponent implements OnInit {
     this.miFormulario.get('priority')?.disable();
     this.miFormulario.get('initialDate')?.disable();
     this.miFormulario.get('finalDate')?.disable();
+    this.miFormulario.get('isCompleted')?.disable();
   }
   enableForm() {
     this.miFormulario.get('description')?.enable();
     this.miFormulario.get('priority')?.enable();
     this.miFormulario.get('initialDate')?.enable();
     this.miFormulario.get('finalDate')?.enable();
+    this.miFormulario.get('isCompleted')?.enable();
   }
 
   cancelUpdate() {
@@ -125,5 +131,6 @@ export class UpdateTasksComponent implements OnInit {
     this.currentTask.priority = this.miFormulario.get('priority')?.value;
     this.currentTask.initialDate = this.miFormulario.get('initialDate')?.value;
     this.currentTask.finalDate = this.miFormulario.get('finalDate')?.value;
+    this.currentTask.isCompleted = this.miFormulario.get('isCompleted')?.value == 'true' ? true : false;
   }
 }
