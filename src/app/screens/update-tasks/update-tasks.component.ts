@@ -11,6 +11,8 @@ export class UpdateTasksComponent implements OnInit {
   taskCharged: boolean = false;
   isLoading: boolean = false;
   tasks: any = [];
+  isThereATask: boolean = false;
+
   currentTask = {
     "name": "",
     "description": "",
@@ -21,8 +23,6 @@ export class UpdateTasksComponent implements OnInit {
     "isCompleted": false
   };
 
-  isThereATask: boolean = false;
-
   miFormulario: FormGroup = this.fb.group({
     "name": [, [Validators.required, Validators.minLength(1)]],
     "description": [, [Validators.required, Validators.minLength(1)]],
@@ -30,12 +30,13 @@ export class UpdateTasksComponent implements OnInit {
     "initialDate": [, [Validators.required]],
     "finalDate": [, [Validators.required]],
     "isCompleted": [, [Validators.required]]
-  })
+  });
   
   isValidForm: boolean = true;
   isCreating: boolean = false;
   wasUpdated: boolean = false;
   touchButton: boolean = false;
+
   constructor(private fs: FirebaseService,
     private fb: FormBuilder) {
     this.getTasks();    
@@ -83,17 +84,13 @@ export class UpdateTasksComponent implements OnInit {
     this.isLoading = false;
     this.wasUpdated = true;
   }
-
   writing() {
     this.isValidForm = true;
   }
-
   getMinDate(): string {
     return new Date().toISOString().split('T')[0];
   }
-
   clearForm() {
-
     this.miFormulario.reset({
       "name": '',
       "description": '',
@@ -103,7 +100,6 @@ export class UpdateTasksComponent implements OnInit {
       "isCompleted": true
     });
   }
-
   disableForm() {
     this.miFormulario.get('name')?.disable();
     this.miFormulario.get('description')?.disable();
@@ -119,18 +115,16 @@ export class UpdateTasksComponent implements OnInit {
     this.miFormulario.get('finalDate')?.enable();
     this.miFormulario.get('isCompleted')?.enable();
   }
-
   cancelUpdate() {
     this.isThereATask = false;
     this.clearForm();
     this.disableForm();
   }
-
   updateValues() {
     this.currentTask.description = this.miFormulario.get('description')?.value;
     this.currentTask.priority = this.miFormulario.get('priority')?.value;
     this.currentTask.initialDate = this.miFormulario.get('initialDate')?.value;
     this.currentTask.finalDate = this.miFormulario.get('finalDate')?.value;
-    this.currentTask.isCompleted = this.miFormulario.get('isCompleted')?.value == 'true' ? true : false;
+    this.currentTask.isCompleted = this.miFormulario.get('isCompleted')?.value === 'true' ? true : false;
   }
 }
