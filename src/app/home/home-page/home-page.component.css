@@ -17,6 +17,7 @@
   margin-top: 40px;
   margin-bottom: 80px;
 }
+
 .home-page-container .main-content .text,
 .home-page-container .main-content .images {
   width: 700px;
@@ -25,7 +26,7 @@
 .home-page-container .main-content .text {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
 }
 
 .home-page-container .main-content .text h1 {
@@ -44,6 +45,7 @@
   margin-left: 30%;
   margin-bottom: 15px;
 }
+
 .home-page-container .main-content .text h5 {
   font-size: 16px;
   color: #ccc;
@@ -51,6 +53,7 @@
   margin-left: 30%;
   margin-bottom: 40px;
 }
+
 .home-page-container .main-content .text a {
   display: block;
   padding-bottom: 2px;
@@ -63,6 +66,7 @@
   width: max-content;
   margin-left: 30%;
 }
+
 .home-page-container .main-content .text a:hover {
   animation: shake 2s infinite linear;
 }
@@ -77,28 +81,34 @@
 .home-page-container .main-content .images img {
   display: block;
 }
+
 .home-page-container .main-content .images .first-image {
   width: 300px;
   border-radius: 10px;
   margin-right: 15%;
 }
+
 .home-page-container .main-content .images .second-image {
   width: 400px;
   border-radius: 10px;
   margin-right: 15%;
   margin-bottom: 10px;
 }
+
 @keyframes shake {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .purple {
   color: #6680FF;
 }
@@ -110,6 +120,7 @@
   .home-page-container {
     justify-content: space-evenly;
   }
+
   .home-page-container .main-content {
     width: 90%;
     margin: 0 auto;
@@ -121,7 +132,7 @@
   .home-page-container .main-content .images .first-image {
     margin-right: 0;
   }
-  
+
   .home-page-container .main-content .images .second-image {
     margin-right: 0;
   }
@@ -129,14 +140,15 @@
   .home-page-container .main-content .text {
     width: 500px;
   }
+
   .home-page-container .main-content .images {
     width: 410px;
   }
 
   .home-page-container .main-content .text h1,
   .home-page-container .main-content .text h4,
-  .home-page-container .main-content .text h5, 
-  .home-page-container .main-content .text a { 
+  .home-page-container .main-content .text h5,
+  .home-page-container .main-content .text a {
     margin-left: 0px;
   }
 }
@@ -146,25 +158,31 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 20px; 
-    flex-basis: min-content;   
+    margin-top: 20px;
+    flex-basis: min-content;
   }
+
   .home-page-container .main-content .images {
     order: 1;
     align-items: center;
   }
+
   .home-page-container .main-content .text {
     order: 2;
   }
+
   .home-page-container .main-content .text h5 {
     margin-bottom: 15px;
   }
+
   .home-page-container .main-content .text a {
     margin: 0px auto;
   }
+
   .home-page-container .main-content .images .first-image {
     display: none;
   }
+
   .home-page-container .main-content .images .second-image {
     width: 200px;
   }
@@ -175,7 +193,8 @@
     width: 90%;
     margin: 0 auto;
   }
-  .home-page-container .main-content .text h4{
+
+  .home-page-container .main-content .text h4 {
     font-size: 50px;
     width: 90%;
     margin: 0px auto;
