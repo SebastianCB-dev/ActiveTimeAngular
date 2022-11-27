@@ -35,14 +35,13 @@
 }
 
 #navbar-home-page ul li p {
-  font-family: 'Sora-Regular';
+  font-family: 'Sora-Regular', 'sans-serif';
   font-size: 15px;
   margin-bottom: 2px;
 }
 
 #navbar-home-page ul li span {
   display: none;
-
   transition: all 300ms;
   font-size: 7px;
 }
@@ -58,4 +57,36 @@
 
 .active:hover {
   color: rgb(255, 166, 0);
+}
+
+/* Responsive */
+
+@media(max-width: 620px) {
+  #navbar-home-page {
+    width: 100%;
+    left: 0%;
+    margin-left: 0;
+  }
+
+  #navbar-home-page ul li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media(max-width: 420px) {
+  #navbar-home-page ul li p {
+    font-size: 13px;
+  }
+}
+
+@media(max-width: 340px) {
+  #navbar-home-page ul li p {
+    font-size: 12px;
+  }
+
+  #navbar-home-page ul li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
