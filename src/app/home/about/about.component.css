@@ -1,15 +1,7 @@
-@font-face {
-  font-family: "Hellix-SemiBold";
-  src: url("../../../assets/fonts/Hellix-SemiBold.woff2");
-}
-@font-face {
-  font-family: "Hellix-Regular";
-  src: url("../../../assets/fonts/Hellix-Regular.woff2");
-}
-
 .container-about {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  max-height: auto;
   background-image: url('../../../assets/imgs/background_about.jpg');
   background-size: cover;
   display: flex;
@@ -18,7 +10,7 @@
 }
 
 .container-about .content-about {
-  width: 60%;
+  width: max-content;
   height: 600px;
 }
 
@@ -26,22 +18,61 @@
   font-size: 60px;
   color: #fff;
   text-align: center;
-  font-family: "Sora-SemiBold";
+  font-family: "Sora-SemiBold", "sans-serif";
 }
 
 .container-about .content-about .content-description {
-  width: 70%;
-  margin: 0px auto;
-  background-color: red;
+  width: 800px;
+  margin: 0 auto;
   height: auto;
   padding: 20px;
   background-color: #000;
   margin-top: 120px;
   border: 2px solid #ccc;
 }
-.container-about .content-about .content-description p{
+
+.container-about .content-about .content-description p {
   color: #fff;
   font-size: 26px;
-  font-family: "Hellix-Regular";
+  font-family: "Hellix-Regular", "sans-serif";
   text-align: center;
+}
+
+@media(max-width: 950px) {
+  .container-about .content-about {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  .container-about .content-about .content-description {
+    width: 100%;
+  }
+}
+
+@media(max-width: 634px) {
+  .container-about {
+    background-size: cover;
+    background-position: -240px 0px;
+  }
+}
+
+@media(max-width: 500px) {
+  .container-about .content-about h3 {
+    font-size: 50px;
+  }
+
+  .container-about .content-about .content-description {
+    margin-top: 20px;
+  }
+}
+
+@media(max-width: 338px) {
+  .container-about .content-about {
+    margin-bottom: 80px;
+    margin-top: 40px;
+    height: auto;
+  }
+  .container-about .content-about .content-description {
+    margin-bottom: 80px;
+  }
 }
