@@ -10,6 +10,7 @@
   border-top: 2px solid #6680FF;
   border-left: 2px solid #6680FF;
   border-right: 2px solid #6680FF;
+  z-index: 90;
 }
 
 #navbar-home-page ul {
