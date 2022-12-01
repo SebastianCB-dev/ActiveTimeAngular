@@ -1,11 +1,8 @@
-
-<div class="container">
-
+<div class="container-login">
   <div class="box">
-
     <div class="title">
       <div class="points">
-        <div class="point-red point"
+        <div class="point-red point" 
              routerLink="/">
           <i class="fa-solid fa-x"></i>
         </div>
@@ -18,40 +15,45 @@
     <div class="content">
       <h3>Active Time - Login</h3>
       <!-- Form -->
-      <form class="box-form"Prot
-            (ngSubmit)="login()"
-            autocomplete="off"
+      <form class="box-form" 
+            (ngSubmit)="login()" 
+            autocomplete="off" 
             [formGroup]="myForm">
         <h5>Welcome to Active Time 😁</h5>
         <!-- Username -->
-        <input type="text"
-               class="txt-username"
-               formControlName="username"
-               (keyup)="changeValueLogin()" required>
+        <input type="text" 
+               class="txt-username" 
+               formControlName="username" 
+               (keyup)="changeValueLogin()" 
+               required>
         <label class="lbl-username">Username</label>
         <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters! 😏</span>
         <span *ngIf="isLoginInvalid">Incorrect username and/or password! 😳</span>
         <!-- Password -->
-        <input type="password"
-               class="txt-password"
-               formControlName="password"
-               (keyup)="changeValueLogin()" required>
+        <input type="password" 
+               class="txt-password" 
+               formControlName="password" 
+               (keyup)="changeValueLogin()" 
+               required>
         <label class="lbl-password">Password</label>
         <span *ngIf="isInvalidCamp('password')">Your password has to be between 7 and 15 characters! 😏</span>
         <!-- Submit -->
-        <button class="btn btn-primary"
-                type="submit"
-                [disabled]="isLoading">Sign in <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn btn-primary" 
+                type="submit" 
+                [disabled]="isLoading">Sign in 
+                <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </form>
-      <p>Already don't have an account? <a routerLink="/auth/register">Sign up</a></p>
+      <p>Already don't have an account? 
+        <a routerLink="/auth/register">Sign up</a>
+      </p>
     </div>
 
   </div>
 
 </div>
 
-<div *ngIf="isLoading"
-     class="loading">
+<div *ngIf="isLoading" class="loading">
   <div class="content">
     <i class="fas fa-spinner"></i>
   </div>
