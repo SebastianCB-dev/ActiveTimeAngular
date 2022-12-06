@@ -1,7 +1,7 @@
 .container-about {
   width: 100%;
   min-height: 100vh;
-  max-height: auto;
+  height: auto;
   background-image: url('../../../assets/imgs/background_about.jpg');
   background-size: cover;
   display: flex;
