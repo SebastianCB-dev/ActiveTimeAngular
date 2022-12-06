@@ -301,6 +301,15 @@
     width: 90%;
     margin: 0 auto;
   }
+  .box .title p {
+    width: 100%;
+    position: relative;
+    margin-left: 0;
+    left: 0;
+    text-align: end;
+    margin-right: 25px;
+  }
+
 }
 
 @media(max-width: 380px) {
