@@ -77,7 +77,7 @@
 }
 
 .box .title .points .point-red:hover {
-  background-color: #e6403e;
+  background-color: #b32422;
 }
 
 .box .title .points .point-red:hover i {
@@ -151,7 +151,7 @@
   outline: 0;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(131, 131, 131, 0.596);
+  border-color: #fff;
   color: #fff;
   font-family: "Hellix-Regular", "sans-serif";
   font-size: 17px;
@@ -165,7 +165,7 @@
 .box .content .box-form .txt-confirm-password:focus {
   border-width: 2px;
   border-style: solid;
-  border-color: #fff;
+  border-color: #6680FF;
 }
 
 .box .content .box-form .txt-username:valid+.lbl-username,
@@ -173,7 +173,7 @@
 .box .content .box-form .txt-confirm-password:valid+.lbl-confirm-password {
   margin-top: -51px;
   font-size: 14px;
-  color: rgba(131, 131, 131, 0.596);
+  color: #fff;
 }
 
 .box .content .box-form .txt-username:focus+.lbl-username,
@@ -181,14 +181,14 @@
 .box .content .box-form .txt-confirm-password:focus+.lbl-confirm-password {
   margin-top: -51px;
   font-size: 14px;
-  color: #fff;
+  color: #6680FF;
 }
 
 .box .content .box-form .lbl-username,
 .box .content .box-form .lbl-password,
 .box .content .box-form .lbl-confirm-password {
   position: absolute;
-  color: rgba(131, 131, 131, 0.596);
+  color: rgb(200, 200, 200);
   font-family: "Hellix-Regular", "sans-serif";
   font-size: 18px;
   margin-top: -42px;
