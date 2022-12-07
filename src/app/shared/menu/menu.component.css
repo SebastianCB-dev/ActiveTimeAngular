@@ -6,11 +6,16 @@
   background-color: #000;
   left: 50%;
   margin-left: -300px;
-  border-radius: 20px 20px 0px 0px;
   border-top: 2px solid #6680FF;
   border-left: 2px solid #6680FF;
   border-right: 2px solid #6680FF;
   z-index: 90;
+  -webkit-border-radius: 20px 20px 0px 0px;
+  -moz-border-radius: 20px 20px 0px 0px;
+  -ms-border-radius: 20px 20px 0px 0px;
+  -o-border-radius: 20px 20px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
+  user-select: none;
 }
 
 #navbar-home-page ul {
@@ -28,10 +33,15 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  cursor: pointer;
 }
 
 #navbar-home-page ul li:hover {
   color: #4458bc;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
   transition: all 300ms;
 }
 
@@ -43,8 +53,12 @@
 
 #navbar-home-page ul li span {
   display: none;
-  transition: all 300ms;
   font-size: 7px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
 }
 
 #navbar-home-page ul .active span {
