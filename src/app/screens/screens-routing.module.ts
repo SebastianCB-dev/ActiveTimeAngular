@@ -12,23 +12,28 @@ const routes: Routes = [{
   children: [
     {
       path: 'menu',
-      component: LobbyPageComponent
+      component: LobbyPageComponent,
+      title: 'Active Time | Menu'
     },
     {
       path: 'add-tasks',
-      component: AddTasksComponent
+      component: AddTasksComponent,
+      title: 'Active Time | Add Tasks'
     },
     {
       path: 'delete-tasks',
-      component: DeleteTasksComponent
+      component: DeleteTasksComponent,
+      title: 'Active Time | Delete Tasks'
     },
     {
       path: 'update-tasks',
-      component: UpdateTasksComponent
+      component: UpdateTasksComponent,
+      title: 'Active Time | Update Tasks'
     },
     {
       path: 'list-tasks',
-      component: ListTasksComponent
+      component: ListTasksComponent,
+      title: 'Active Time | List Tasks'
     },
     {
       path: '**',
