@@ -1,6 +1,8 @@
 .container-lobby-page {
+  padding-top: 40px;
   width: 80%;
-  height: 72vh;
+  min-height: 72vh;
+  height: auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -19,19 +21,24 @@
 
 .container-lobby-page .info h4 {
   color: #ccc;
-  font-family: 'Sora-Semibold';
+  font-family: 'Sora-SemiBold', sans-serif;
   font-size: 25px;
 }
 
 .container-lobby-page .info h5 {
   color: #fff;
-  font-family: 'Sora-Regular';
+  font-family: 'Sora-SemiBold', sans-serif;
   font-size: 22px;
+}
+
+.container-lobby-page .info span {
+  color: #FFA500;
+  border-bottom: 2px solid #FFA500;
 }
 
 .container-lobby-page .buttons h5 {
   color: #fff;
-  font-family: 'Sora-Bold';
+  font-family: 'Sora-Bold', sans-serif;
   font-size: 23px;
   text-align: center;
   margin-bottom: 30px;
@@ -45,46 +52,99 @@
   height: 45px;
   outline: none;
   background-color: transparent;
-  color: #ccc;
-  font-family: 'Sora-Regular';
+  color: #fff;
+  font-family: 'Sora-Regular', sans-serif;
   border: 2px solid #fff;
   font-size: 19px;
-  transition: all 300ms;
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   -ms-transition: all 300ms;
   -o-transition: all 300ms;
-  border-radius: 5px;
+  transition: all 300ms;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-}
-.container-lobby-page .buttons button:hover {
-  color: #fff;
-  border: 2px solid #6680FF;
-  box-shadow: 0px 0px 15px #2e48cc;
+  border-radius: 5px;
 }
 
+.container-lobby-page .buttons button:nth-child(2) {
+  border: 2px solid rgb(5, 151, 5);
+}
+
+.container-lobby-page .buttons button:nth-child(3) {
+  border: 2px solid rgb(23, 89, 195);
+}
+
+.container-lobby-page .buttons button:nth-child(4) {
+  border: 2px solid rgb(255, 166, 0);
+}
+
+.container-lobby-page .buttons button:nth-child(5) {
+  border: 2px solid rgb(154, 8, 8);
+}
+
+.container-lobby-page .buttons button:nth-child(2):hover {
+  box-shadow: 0 0 20px rgb(5, 151, 5);
+  color: rgb(78, 230, 78);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.container-lobby-page .buttons button:nth-child(3):hover {
+  box-shadow: 0 0 10px rgb(23, 89, 195);
+  color: rgb(35, 192, 255);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.container-lobby-page .buttons button:nth-child(4):hover {
+  box-shadow: 0 0 10px rgb(255, 166, 0);
+  color: rgb(207, 134, 0);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.container-lobby-page .buttons button:nth-child(5):hover {
+  box-shadow: 0 0 10px rgb(154, 8, 8);
+  color: rgb(208, 57, 57);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+}
 
 .info-tasks {
   width: 100%;
   margin-top: 35px;
+  margin-bottom: 40px;
 }
+
 hr {
   color: #fff;
   border: 2px solid #fff;
 }
+
 .info-tasks .info h3 {
   text-align: center;
   font-size: 30px;
-  font-family: 'Sora-Semibold';
+  font-family: 'Sora-SemiBold', sans-serif;
   color: #6680FF;
 }
 
 .info-tasks .data {
   width: 80%;
-  margin: 0px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   margin-top: 35px;
@@ -94,12 +154,12 @@ hr {
   text-align: center;
   font-size: 22px;
   color: #ccc;
-  font-family: 'Sora-SemiBold';
+  font-family: 'Sora-SemiBold', sans-serif;
 }
 
 .info-tasks .data .info-data p {
   color: #fff;
   text-align: center;
   font-size: 20px;
-  font-family: 'Sora-Regular';
+  font-family: 'Sora-Regular', sans-serif;
 }

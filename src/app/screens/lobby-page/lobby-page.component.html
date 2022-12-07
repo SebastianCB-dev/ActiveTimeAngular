@@ -2,15 +2,19 @@
   <article class="info">
     <h3>Task Management</h3>
     <h4>Welcome to Active Time</h4>
-    <h5>{{ getUser() }}</h5>
+    <h5>User: <span>{{ getUser() }}</span></h5>
     <app-button-logout></app-button-logout>
   </article>
   <article class="buttons">
-    <h5>What do you wanna do?</h5>
-    <button type="button" routerLink="/tasks/add-tasks">Create Task</button>
-    <button type="button" routerLink="/tasks/list-tasks">List Tasks</button>
-    <button type="button" routerLink="/tasks/update-tasks">Update Tasks</button>
-    <button type="button" routerLink="/tasks/delete-tasks">Delete Tasks</button>
+    <h5>What do you want to do?</h5>
+    <button type="button" 
+            routerLink="/tasks/add-tasks">Create Task</button>
+    <button type="button" 
+            routerLink="/tasks/list-tasks">List Tasks</button>
+    <button type="button" 
+            routerLink="/tasks/update-tasks">Update Tasks</button>
+    <button type="button" 
+            routerLink="/tasks/delete-tasks">Delete Tasks</button>
   </article>
 </section>
 <hr>
@@ -19,6 +23,7 @@
     <h3>Tasks Report</h3>
   </article>
   <article class="data">
+    <!-- TODO: Mirar si se puede crear un component -->
     <div class="info-data data-1">
       <h6>Tasks created</h6>
       <p>{{ data_1 }}</p>

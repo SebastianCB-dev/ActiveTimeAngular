@@ -31,7 +31,7 @@
 
 .home-page-container .main-content .text h1 {
   font-size: 30px;
-  font-family: 'Sora-Regular', 'sans-serif';
+  font-family: 'Sora-Regular', sans-serif;
   color: #ccc;
   margin-left: 30%;
   margin-bottom: 20px;
@@ -39,7 +39,7 @@
 
 .home-page-container .main-content .text h4 {
   color: #fff;
-  font-family: 'Sora-Bold', 'sans-serif';
+  font-family: 'Sora-Bold', sans-serif;
   font-size: 50px;
   width: 500px;
   margin-left: 30%;
@@ -49,7 +49,7 @@
 .home-page-container .main-content .text h5 {
   font-size: 16px;
   color: #ccc;
-  font-family: 'Sora-Regular', 'sans-serif';
+  font-family: 'Sora-Regular', sans-serif;
   margin-left: 30%;
   margin-bottom: 40px;
 }
@@ -58,7 +58,7 @@
   display: block;
   padding-bottom: 2px;
   color: #6680FF;
-  font-family: 'Sora-SemiBold', 'sans-serif';
+  font-family: 'Sora-SemiBold', sans-serif;
   border-bottom: 3px solid #6680FF;
   text-decoration: none;
   font-size: 30px;
