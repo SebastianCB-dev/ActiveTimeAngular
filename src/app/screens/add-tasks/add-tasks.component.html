@@ -19,40 +19,44 @@
             autocomplete="off"
             [formGroup]="miFormulario">
           <!-- Task name  -->
-          <label class="title-label">Task name</label>
           <input type="text"
-                 formControlName="task-name"
-                 (keypress)="writing()"
-                 placeholder="Play League Of Legends...">
-
-
+          formControlName="task-name"
+          (keypress)="writing()"
+          class="txt-name"
+          required>
+          <label class="title-label lbl-name">Task name</label>
+          
           <!-- Task Description -->
-          <label>Task Description</label>
           <input type="text"
-                 formControlName="task-description"
-                 (keypress)="writing()"
-                 placeholder="Play League of Legends at 5:30 pm ...">
+          formControlName="task-description"
+          (keypress)="writing()"
+          class="txt-description"
+          required>
+          <label class="lbl-description">Task Description</label>
 
           <!-- Priority -->
-          <label>Priority</label>
+          <label class="lbl-priority">Priority</label>
           <select name="select"
-                  formControlName="priority">
-            <option value="High" class="option1">High</option>
-            <option value="Medium" class="option2" selected>Medium</option>
-            <option value="Low" class="option3">Low</option>
+                  formControlName="priority"
+                  class="select-priority">
+            <option value="High" class="option1 option">High</option>
+            <option value="Medium" class="option2 option" selected>Medium</option>
+            <option value="Low" class="option3 option">Low</option>
           </select>
 
           <!-- Initial Date-->
-          <label>Initial Date</label>
+          <label class="lbl-initial-date">Initial Date</label>
           <input type="date"
                  formControlName="initial-date"
-                 [min]="getMinDate()">
+                 [min]="getMinDate()"
+                 class="input-date">
 
           <!-- Final Date -->
-          <label>Final Date</label>
+          <label class="lbl-final-date">Final Date</label>
           <input type="date"
                  formControlName="final-date"
-                 [min]="getMinDate()">
+                 [min]="getMinDate()"
+                 class="input-date">
 
           <!-- Buttons -->
           <div class="buttons">

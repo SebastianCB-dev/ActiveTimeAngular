@@ -1,15 +1,7 @@
-@font-face {
-  font-family: "Hellix-SemiBold";
-  src: url("../../../assets/fonts/Hellix-SemiBold.woff2");
-}
-@font-face {
-  font-family: "Hellix-Regular";
-  src: url("../../../assets/fonts/Hellix-Regular.woff2");
-}
-
 .container-main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,54 +9,79 @@
 
 .container-main .content-add-task {
   width: 600px;
-  height: 600px;
+  height: auto;
   background-color: #000;
-  border-radius: 12px;
   box-shadow: 0px 0px 30px #000;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
 }
 
 .container-main .content-add-task .title {
   height: 50px;
   border-bottom: 1px solid #1E1E1E;
-  border-radius: 12px 12px 0px 0px;
   display: flex;
+  -webkit-border-radius: 12px 12px 0px 0px;
+  -moz-border-radius: 12px 12px 0px 0px;
+  -ms-border-radius: 12px 12px 0px 0px;
+  -o-border-radius: 12px 12px 0px 0px;
+  border-radius: 12px 12px 0px 0px;
 }
 
 .container-main .content-add-task .title .points {
   width: 90px;
   height: 100%;
   padding-left: 5px;
-  border-radius: 12px 0px 0px 0px;
   display: flex;
   padding-top: 15px;
   justify-content: space-around;
+  -webkit-border-radius: 12px 0px 0px 0px;
+  -moz-border-radius: 12px 0px 0px 0px;
+  -ms-border-radius: 12px 0px 0px 0px;
+  -o-border-radius: 12px 0px 0px 0px;
+  border-radius: 12px 0px 0px 0px;
 }
+
 .container-main .content-add-task .title .points .point {
   width: 18px;
   height: 18px;
-  border-radius: 100%;
   border: 1px solid #1E1E1E;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
 }
 
 .container-main .content-add-task .title .points .point-red {
   background-color: #F05C5A;
   cursor: pointer;
 }
-.container-main .content-add-task .title .points .point-red i{
+
+.container-main .content-add-task .title .points .point-red i {
   display: block;
   font-size: 11px;
   font-weight: bold;
   padding-top: 3px;
   text-align: center;
   opacity: 0;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
   transition: all 200ms;
 }
+
 .container-main .content-add-task .title .points .point-red:hover {
   background-color: #e6403e;
 }
-.container-main .content-add-task .title .points .point-red:hover i{
+
+.container-main .content-add-task .title .points .point-red:hover i {
   opacity: 1;
 }
+
 .container-main .content-add-task .title .points .point-green {
   background-color: #34D42C;
 }
@@ -78,10 +95,14 @@
   line-height: 50px;
   color: #ccc;
   cursor: pointer;
-  transition: all 300ms;
   margin-left: 140px;
-  font-family: "Hellix-SemiBold";
+  font-family: "Hellix-SemiBold", sans-serif;
   font-size: 18px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
 }
 
 .container-main .content-add-task .title p:hover {
@@ -89,7 +110,7 @@
 }
 
 .container-main .content form label,
-.container-main .content form input{
+.container-main .content form input {
   display: block;
 }
 
@@ -98,69 +119,133 @@
   text-align: center;
   font-size: 35px;
   margin-top: 25px;
-  font-family: "Hellix-SemiBold";
+  font-family: "Hellix-SemiBold", sans-serif;
   margin-bottom: 25px;
 }
 
-.container-main .content form label {
-  text-align: center;
-  color: #ccc;
-  font-family: "Hellix-SemiBold";
-  font-style: italic;
-
+.content-add-task form .txt-name,
+.content-add-task form .txt-description {
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  height: 60px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
+  font-family: "Hellix-Regular", "sans-serif";
+  font-size: 17px;
+  padding-left: 15px;
+  line-height: 20px;
+  padding-top: 22px;
 }
 
-.container-main .content form input[type="text"] {
+.content-add-task form .txt-name:focus,
+.content-add-task form .txt-description:focus {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #6680FF;
+}
+
+.content-add-task form .lbl-name,
+.content-add-task form .lbl-description {
+  position: absolute;
+  color: rgb(200, 200, 200);
+  font-family: "Hellix-Regular", "sans-serif";
+  font-size: 18px;
+  margin-top: -40px;
+  margin-left: 75px;
+  z-index: 2;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.content-add-task form .lbl-priority,
+.content-add-task form .lbl-initial-date,
+.content-add-task form .lbl-final-date {
+  text-align: center;
+  color: #6680FF;
+  font-family: 'Hellix-SemiBold', sans-serif;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.content-add-task form .txt-name:valid+.lbl-name,
+.content-add-task form .txt-description:valid+.lbl-description {
+  margin-top: -51px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.content-add-task form .txt-name:focus+.lbl-name,
+.content-add-task form .txt-description:focus+.lbl-description {
+  margin-top: -51px;
+  font-size: 14px;
+  color: #6680FF;
+}
+
+.content-add-task form .txt-description {
+  margin-top: 20px;
+}
+
+.content-add-task form .select-priority,
+.content-add-task form .input-date {
   display: block;
   width: 50%;
-  margin: 0px auto;
-  height: 40px;
-  border-radius: 5px;
-  outline: none;
-  border: 2px solid #000;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: all 300ms;
-  margin-bottom: 10px;
-}
-
-.container-main .content form input[type="text"]:focus {
-  border: 2px solid #ffa500;
-}
-
-.container-main .content form select {
-  display: block;
-  margin: 0px auto;
-  padding: 3px;
-  border: 1px solid #000;
-  outline: none;
-  border-radius: 4px;
-  color: #000;
-  font-family: "Hellix-Regular";
-  margin-bottom: 10px;
-}
-
-.container-main .content form input[type="date"] {
-  width: 200px;
-  display: block;
-  margin: 0px auto;
-  padding: 5px;
-  border-radius: 2px;
-  outline: none;
-  border: 2px solid transparent;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 45px;
   text-align: center;
+  font-family: 'Hellix-SemiBold', sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: 2px solid #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.content-add-task form .select-priority .option {
+  background-color: #000;
+}
+
+.content-add-task form .select-priority .option1 {
+  color: rgb(129, 19, 19);
+}
+
+.content-add-task form .select-priority .option2 {
+  color: rgb(255, 166, 1);
+}
+
+.content-add-task form .select-priority .option3 {
+  color: rgb(23, 163, 23);
 }
 
 .container-main .content form .buttons {
   width: 50%;
-  margin: 0px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
-
-
 
 #message-alert {
   display: block;
@@ -170,11 +255,8 @@
   left: 50%;
   margin-left: -110px;
   text-align: center;
-  font-family: "Hellix-SemiBold";
+  font-family: "Hellix-SemiBold", sans-serif;
 }
-
-
-
 
 .loading {
   position: fixed;
@@ -185,6 +267,7 @@
   height: 100vh;
   z-index: 10;
 }
+
 .loading .content {
   width: 100%;
   height: 100%;
@@ -196,20 +279,33 @@
 .loading .content i {
   text-align: center;
   font-size: 100px;
-  color: orange;
+  color: rgb(255, 166, 0);
+  -webkit-animation: loading infinite 4s linear;
   animation: loading infinite 4s linear;
 }
 
 @keyframes loading {
   0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
   50% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 
   100% {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
     transform: rotate(720deg);
   }
 }
