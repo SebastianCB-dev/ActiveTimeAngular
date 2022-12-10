@@ -19,6 +19,7 @@
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   border-radius: 12px;
+  border: 1px solid #ccc;
 }
 
 .box .title {
