@@ -17,6 +17,9 @@
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   border-radius: 12px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 1px solid #ccc;
 }
 
 .container-main .content-add-task .title {
@@ -266,6 +269,7 @@
   margin-left: -110px;
   text-align: center;
   font-family: "Hellix-SemiBold", sans-serif;
+  z-index: 100;
 }
 
 .loading {
