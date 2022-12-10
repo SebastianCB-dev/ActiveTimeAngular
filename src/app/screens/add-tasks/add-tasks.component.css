@@ -247,6 +247,16 @@
   margin-bottom: 40px;
 }
 
+
+.content-add-task form .input-date::-webkit-calendar-picker-indicator {
+  background: url('../../../assets/imgs/calendario.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 #message-alert {
   display: block;
   position: fixed;
