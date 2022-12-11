@@ -8,7 +8,8 @@
       <h4>Pending</h4>
     </div>
     <div class="tasks-box">
-      <div class="task" *ngFor="let task of tasks_no_completed">
+      <div class="task" 
+           *ngFor="let task of tasks_no_completed">
         <!--Title -->
         <h2>{{ task['name'] }}</h2>
         <!-- Description -->
@@ -34,8 +35,11 @@
       <div id="tasks-pending"
             *ngIf="!isLoading && tasks_no_completed.length === 0">
         <p>You don't have any task <span class="orange">pending</span>.</p>
-        <img src="../../../assets/imgs/no_completed_tasks.svg" alt="Pending tasks image">
-        <button type="button" class="btn btn-warning" routerLink="/tasks/add-tasks">Create a task</button>
+        <img src="../../../assets/imgs/no_completed_tasks.svg" 
+             alt="Pending tasks image">
+        <button type="button" 
+                class="btn btn-warning" 
+                routerLink="/tasks/add-tasks">Create a task</button>
       </div>
     </div>
   </div>
@@ -46,7 +50,8 @@
     </div>
 
     <div class="tasks-box">
-      <div class="task" *ngFor="let task of tasks_completed">
+      <div class="task" 
+           *ngFor="let task of tasks_completed">
         <!--Title -->
         <h2>{{ task['name'] }}</h2>
         <!-- Description -->
@@ -69,17 +74,21 @@
         </div>
       </div>
       <!-- IF NOT EXISTS TASKS-->
-      <div id="tasks-completed" *ngIf="!isLoading && tasks_completed.length === 0">
+      <div id="tasks-completed" 
+           *ngIf="!isLoading && tasks_completed.length === 0">
         <p>You don't have any task <span class="green">completed</span>.</p>
-        <img src="../../../assets/imgs/completed_tasks.svg" alt="Pending tasks image">
-        <button type="button" class="btn btn-success"
-        routerLink="/tasks/update-tasks">Complete a task</button>
+        <img src="../../../assets/imgs/completed_tasks.svg" 
+             alt="Pending tasks image">
+        <button type="button" 
+                class="btn btn-success"
+                routerLink="/tasks/update-tasks">Complete a task</button>
       </div>
     </div>
   </div>
 </section>
 
-<div *ngIf="isLoading" class="loading">
+<div *ngIf="isLoading" 
+     class="loading">
   <div class="content">
     <i class="fas fa-spinner"></i>
   </div>

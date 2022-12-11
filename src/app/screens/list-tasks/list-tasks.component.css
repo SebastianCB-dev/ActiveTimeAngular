@@ -5,20 +5,24 @@
   justify-content: center;
   align-items: center;
 }
+
 .title-list-tasks h3 {
   font-size: 45px;
   font-family: 'Sora-Bold', sans-serif;
   color: #6680FF;
   text-decoration: underline;
 }
+
 #list-tasks-container {
   height: auto;
   width: 90%;
   margin: 0 auto;
 }
+
 #list-tasks-container .tasks {
   height: auto;
 }
+
 #list-tasks-container .tasks .title h4 {
   text-align: start;
   font-family: 'Sora-SemiBold', sans-serif;
@@ -32,14 +36,17 @@
 #list-tasks-container .completed .title h4 {
   color: #00B327;
 }
+
 #list-tasks-container .no-completed .title h4 {
   color: #ffa500;
 }
+
 #list-tasks-container hr {
   border: 1px solid #fff;
   margin-top: 80px;
   margin-bottom: 30px;
 }
+
 #list-tasks-container .tasks-box {
   display: flex;
   justify-content: flex-start;
@@ -47,14 +54,23 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
 #list-tasks-container .tasks-box .task {
   width: 350px;
   height: min-content;
   border: 2px solid #ccc;
-  border-radius: 12px;
   margin-right: 30px;
   margin-bottom: 30px;
   padding: 15px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
   transition: all 300ms;
 }
 
@@ -64,13 +80,26 @@
   margin-top: 10px;
   font-size: 25px;
   font-family: 'Sora-SemiBold', sans-serif;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
   transition: all 300ms;
 }
 
-#list-tasks-container .tasks-box .task > p {
+#list-tasks-container .tasks-box .task>p {
+  /*hacersaltodelineatextolargo*/width: 90%;
+  margin: 0 auto;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   color: #ccc;
   font-family: 'Sora-Regular', sans-serif;
   margin-top: 10px;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 #list-tasks-container .tasks-box .task .priority,
@@ -84,16 +113,20 @@
 
 #list-tasks-container .tasks-box .task .priority p,
 #list-tasks-container .tasks-box .task .start-date p,
-#list-tasks-container .tasks-box .task .end-date p{
+#list-tasks-container .tasks-box .task .end-date p {
   margin-right: 5px;
   margin-bottom: 0;
 }
 
 #list-tasks-container .tasks-box .task .priority span,
 #list-tasks-container .tasks-box .task .start-date span,
-#list-tasks-container .tasks-box .task .end-date span{
-  border-radius: 12px;
+#list-tasks-container .tasks-box .task .end-date span {
   padding: 4px 10px 4px 10px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
 }
 
 #list-tasks-container .tasks-box .task .priority .Medium {
@@ -118,7 +151,7 @@
 
 #list-tasks-container .tasks-box .task h4 {
   text-align: center;
-  color: orange;
+  color: rgb(255, 166, 0);
 }
 
 #list-tasks-container .tasks-box .priority,
@@ -128,13 +161,21 @@
 }
 
 #list-tasks-container .no-completed .tasks-box .task:hover {
-  transform: scale(1.02, 1.02);
   border: 2px solid rgb(255, 166, 0);
+  -webkit-transform: scale(1.02, 1.02);
+  -moz-transform: scale(1.02, 1.02);
+  -ms-transform: scale(1.02, 1.02);
+  -o-transform: scale(1.02, 1.02);
+  transform: scale(1.02, 1.02);
 }
 
 #list-tasks-container .completed .tasks-box .task:hover {
-  transform: scale(1.02, 1.02);
   border: 2px solid rgb(0, 128, 0);
+  -webkit-transform: scale(1.02, 1.02);
+  -moz-transform: scale(1.02, 1.02);
+  -ms-transform: scale(1.02, 1.02);
+  -o-transform: scale(1.02, 1.02);
+  transform: scale(1.02, 1.02);
 }
 
 
@@ -160,21 +201,34 @@
   text-align: center;
   font-size: 100px;
   color: rgb(255, 166, 0);
+  -webkit-animation: loading infinite 4s linear;
   animation: loading infinite 4s linear;
 }
 
 @keyframes loading {
   0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg);
-  }
+}
 
   50% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
-  }
+}
 
   100% {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
     transform: rotate(720deg);
-  }
+}
 }
 
 #tasks-pending,
@@ -195,13 +249,13 @@
 #tasks-completed img {
   display: block;
   width: 200px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 #tasks-pending button,
 #tasks-completed button {
   display: block;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 20px;
 }
 
