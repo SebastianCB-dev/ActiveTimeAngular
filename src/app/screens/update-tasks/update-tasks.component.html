@@ -6,17 +6,17 @@
   <!-- Todas las tareas -->
   <article class="container-update-tasks">
     <div class="all-tasks box">
+      <h3>{{ tasks.length | i18nPlural: messageMapping }}</h3>
       <div class="tasks"
-           *ngIf="tasks">
-        <h3>These are your tasks:</h3>
-        <button *ngFor="let task of tasks; let i = index"
+      *ngIf="tasks">
+      <button *ngFor="let task of tasks; let i = index"
                 type="button"
                 (click)="changeDataTask(i)">{{ task.name }}</button>
         <!-- Si no hay tareas -->
         <div class="no-tasks"
              *ngIf="tasks.length <= 0 && taskCharged">
           <img src="../../../assets/imgs/no-task.svg" alt="Image No Tasks">
-          <p>You do not have any tasks 😒</p>
+          <p>You do not have any tasks</p>
           <a type="button" class="btn btn-success"
             routerLink="/tasks/add-tasks">Create Tasks</a>
         </div>
@@ -37,16 +37,22 @@
                  (keypress)="writing()" 
                  placeholder="Play League Of Legends..."
                  [value]="currentTask['name']"
-                 class="purple center">
+                 class="purple center"
+                 required>
                     
           <!-- Task Description -->
           <label>Task Description</label>
-          <textarea formControlName="description" (keypress)="writing()"
-            placeholder="Play League of Legends at 5:30 pm ..." cols="40" rows="3" [value]="currentTask['description']"></textarea>
+          <textarea formControlName="description" 
+                    (keypress)="writing()"
+                    placeholder="Play League of Legends at 5:30 pm ..." 
+                    cols="40" 
+                    rows="3" 
+                    [value]="currentTask['description']"
+                    maxlength="80"></textarea>
           
           <!-- Priority -->
           <label>Priority</label>
-          <select name="select" formControlName="priority">
+          <select name="select" formControlName="priority" id="priority-task">
             <option value="High" class="option1">High</option>
             <option value="Medium" class="option2" selected>Medium</option>
             <option value="Low" class="option3">Low</option>
@@ -65,9 +71,14 @@
 
           <!-- Completed -->
           <label>Status</label>
-          <select name="select2" formControlName="isCompleted">
-            <option value="true" class="option1">Completed</option>
-            <option value="false" class="option2" selected>Pending</option>
+          <select name="select2" 
+                  formControlName="isCompleted"
+                  id="pending-task">
+            <option value="true" 
+                    class="option1">Completed</option>
+            <option value="false" 
+                    class="option2" 
+                    selected>Pending</option>
           </select>
 
           <div class="buttons">
@@ -94,7 +105,7 @@
 </div>
 
 <button type="button" id="button-back" class="btn btn-secondary" routerLink="tasks/menu">
-  Volver
+  Back
   <i class="fa-solid fa-rotate-left"></i>
 </button>
 

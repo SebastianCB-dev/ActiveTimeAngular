@@ -64,11 +64,13 @@ export class UpdateTasksComponent implements OnInit {
     this.isThereATask = true;
     this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 'description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initialDate': this.tasks[index]['initialDate'], 'finalDate': this.tasks[index]['finalDate'], 'isCompleted': this.tasks[index]['isCompleted'] });
   }
-
+  // PIPE 
+  messageMapping:
+    { [k: string]: string } = { '=0': 'You have 0 tasks.', '=1': 'There is 1 task.', 'other': 'There are # tasks.' };
   async updateTask() { 
 
     if(!(this.miFormulario.valid) ||
-       (this.miFormulario.get('initialDate')?.value > this.miFormulario.get('finalDate')?.value ) || this.miFormulario.get('description')?.value.trim().length === 0){      
+       (this.miFormulario.get('initialDate')?.value >  this.miFormulario.get('finalDate')?.value ) || this.miFormulario.get('description')?.value.trim().length === 0){      
       this.touchButton = true;
       this.wasUpdated = false;
       return;
