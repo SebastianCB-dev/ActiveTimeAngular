@@ -39,7 +39,7 @@ export class UpdateTasksComponent implements OnInit {
 
   constructor(private fs: FirebaseService,
     private fb: FormBuilder) {
-    this.getTasks();    
+    this.getTasks();   
    }
 
   ngOnInit(): void {
@@ -52,6 +52,7 @@ export class UpdateTasksComponent implements OnInit {
     this.isLoading = true;
     const data = await this.fs.getTasksByUser(localStorage.getItem('att-session') || '');
     this.tasks = data;
+    this.orderTasks();
     this.isLoading = false;
     this.taskCharged = true;
   }
@@ -128,5 +129,22 @@ export class UpdateTasksComponent implements OnInit {
     this.currentTask.initialDate = this.miFormulario.get('initialDate')?.value;
     this.currentTask.finalDate = this.miFormulario.get('finalDate')?.value;
     this.currentTask.isCompleted = this.miFormulario.get('isCompleted')?.value === 'true' ? true : false;
+  }
+
+  getClass(status: boolean) {
+    return status ? 'completed' : 'not-completed';
+  }
+
+  orderTasks() {
+    if(this.tasks.length === 0) return;
+    this.tasks.sort((a: any, b: any) => {
+        if (a.isCompleted && !b.isCompleted) {
+          return 1;
+        }
+        if (!a.isCompleted && b.isCompleted) {
+          return -1;
+        }
+        return 0;
+      });
   }
 }

@@ -28,7 +28,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .container-tasks .container-update-tasks .all-tasks {
@@ -58,7 +58,8 @@
 .container-tasks .container-update-tasks .box .tasks button {
   display: block;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
+  height: auto;
   margin-bottom: 10px;
   border: 2px solid rgb(35, 35, 35);
   background-color: #000;
@@ -71,8 +72,15 @@
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   transition: all 300ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 
+.container-tasks .container-update-tasks .box .tasks button p { 
+  margin-bottom: 0;
+}
 .container-tasks .container-update-tasks .box .tasks button:hover {
   border: 2px solid #ccc;
   color: #6680FF;
@@ -334,4 +342,16 @@
 
 .center {
   text-align: center;
+}
+
+.completed {
+  color: rgb(28, 182, 28);
+  font-size: 13px;
+  font-family: 'Sora-SemiBold', sans-serif;
+}
+
+.not-completed {
+  color: rgb(255, 166, 0);
+  font-size: 13px;
+  font-family: 'Sora-SemiBold', sans-serif;
 }

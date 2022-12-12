@@ -10,6 +10,7 @@ import { DeleteTasksComponent } from './delete-tasks/delete-tasks.component';
 import { UpdateTasksComponent } from './update-tasks/update-tasks.component';
 import { ListTasksComponent } from './list-tasks/list-tasks.component';
 import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
+import { ConvertStatus } from '../pipes/convertStatus.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ButtonLogoutComponent } from './components/button-logout/button-logout.
     DeleteTasksComponent,
     UpdateTasksComponent,
     ListTasksComponent,
-    ButtonLogoutComponent
+    ButtonLogoutComponent,
+    ConvertStatus
   ],
   imports: [
     CommonModule,

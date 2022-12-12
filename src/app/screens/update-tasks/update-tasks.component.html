@@ -11,7 +11,10 @@
       *ngIf="tasks">
       <button *ngFor="let task of tasks; let i = index"
                 type="button"
-                (click)="changeDataTask(i)">{{ task.name }}</button>
+                (click)="changeDataTask(i)">
+        <p>{{ task.name }}</p>
+        <p [class]="getClass(task.isCompleted)">{{ task.isCompleted | convertStatus }}</p>
+      </button>
         <!-- Si no hay tareas -->
         <div class="no-tasks"
              *ngIf="tasks.length <= 0 && taskCharged">
