@@ -27,7 +27,8 @@
         <input type="text"
                class="txt-username"
                formControlName="username"
-               (keyup)="changeValueUsername()" required
+               (keyup)="changeValueUsername()" 
+               required
                maxlength="25">
         <label class="lbl-username">Username</label>
         <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters!</span>
@@ -41,7 +42,6 @@
                maxlength="25">
         <label class="lbl-password">Password</label>
         <span *ngIf="isInvalidCamp('password')">Write a password between 7 and 15 characters!</span>
-
         <!-- Confirm password -->
         <input type="password"
                class="txt-confirm-password"
