@@ -23,15 +23,16 @@
           formControlName="task-name"
           (keypress)="writing()"
           class="txt-name"
-          required>
+          required
+          maxlength="30">
           <label class="title-label lbl-name">Task name</label>
-          
           <!-- Task Description -->
           <input type="text"
           formControlName="task-description"
           (keypress)="writing()"
           class="txt-description"
-          required>
+          required
+          maxlength="80">
           <label class="lbl-description">Task Description</label>
 
           <!-- Priority -->
