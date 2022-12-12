@@ -13,9 +13,9 @@ export class RegisterComponent implements OnInit {
   titlePage: Element = document.querySelector('#title-page')!;
   arePasswordsTheSame: boolean = true;
   myForm: UntypedFormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
-    password: [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]],
-    'confirm-password': [, [Validators.required, Validators.maxLength(14), Validators.minLength(7)]]
+    username: [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+    password: [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
+    'confirm-password': [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]]
   });
 
   isCreating: boolean = false;

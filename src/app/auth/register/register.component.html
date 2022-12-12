@@ -22,31 +22,36 @@
             (ngSubmit)="register()"
             autocomplete="off"
             [formGroup]="myForm">
-        <h5>Create a free account</h5>
+        <h5>Create a free account.</h5>
         <!-- Username -->
         <input type="text"
                class="txt-username"
                formControlName="username"
-               (keyup)="changeValueUsername()" required>
+               (keyup)="changeValueUsername()" required
+               maxlength="25">
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters! 😏</span>
-        <span *ngIf="isUserCreated">This username has been already created! 😳</span>
+        <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters!</span>
+        <span *ngIf="isUserCreated">This username has been already created!</span>
         <!-- Password -->
         <input type="password"
                class="txt-password"
                formControlName="password"
-               (keyup)="changeValuePassword()" required>
+               (keyup)="changeValuePassword()" 
+               required
+               maxlength="25">
         <label class="lbl-password">Password</label>
-        <span *ngIf="isInvalidCamp('password')">Write a password between 7 and 15 characters! 🤐</span>
+        <span *ngIf="isInvalidCamp('password')">Write a password between 7 and 15 characters!</span>
 
         <!-- Confirm password -->
         <input type="password"
                class="txt-confirm-password"
                formControlName="confirm-password"
-               (keyup)="changeValuePassword()" required>
+               (keyup)="changeValuePassword()" 
+               required
+               maxlength="25">
         <label class="lbl-confirm-password">Confirm password</label>
-        <span *ngIf="isInvalidCamp('confirm-password')">Confirm your password! 🤐</span>
-        <span *ngIf="!arePasswordsTheSame">The passwords aren't the same! 🤔</span>
+        <span *ngIf="isInvalidCamp('confirm-password')">Confirm your password!</span>
+        <span *ngIf="!arePasswordsTheSame">The passwords are not the same!</span>
 
         <!-- Submit -->
         <button class="btn btn-primary"
