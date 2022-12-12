@@ -13,30 +13,32 @@
     </div>
 
     <div class="content">
-      <h3>Active Time - Login</h3>
+      <h3>ActiveTime - Login</h3>
       <!-- Form -->
       <form class="box-form" 
             (ngSubmit)="login()" 
             autocomplete="off" 
             [formGroup]="myForm">
-        <h5>Welcome to Active Time 😁</h5>
+        <h5>Welcome to Active Time.</h5>
         <!-- Username -->
         <input type="text" 
                class="txt-username" 
                formControlName="username" 
-               (keyup)="changeValueLogin()" 
+               (keyup)="changeValueLogin()"
+               maxlength="25"
                required>
         <label class="lbl-username">Username</label>
-        <span *ngIf="isInvalidCamp('username')">Your username has to be between 7 and 15 characters! 😏</span>
-        <span *ngIf="isLoginInvalid">Incorrect username and/or password! 😳</span>
+        <span *ngIf="isInvalidCamp('username')">Your username has to be between 6 and 16 characters!</span>
+        <span *ngIf="isLoginInvalid">Incorrect username and/or password!</span>
         <!-- Password -->
         <input type="password" 
                class="txt-password" 
                formControlName="password" 
                (keyup)="changeValueLogin()" 
+               maxlength="25"
                required>
         <label class="lbl-password">Password</label>
-        <span *ngIf="isInvalidCamp('password')">Your password has to be between 7 and 15 characters! 😏</span>
+        <span *ngIf="isInvalidCamp('password')">Your password has to be between 6 and 16 characters!</span>
         <!-- Submit -->
         <button class="btn btn-primary" 
                 type="submit" 
