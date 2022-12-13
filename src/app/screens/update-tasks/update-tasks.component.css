@@ -79,9 +79,10 @@
   padding: 10px;
 }
 
-.container-tasks .container-update-tasks .box .tasks button p { 
+.container-tasks .container-update-tasks .box .tasks button p {
   margin-bottom: 0;
 }
+
 .container-tasks .container-update-tasks .box .tasks button:hover {
   border: 2px solid #ccc;
   color: #6680FF;
@@ -105,11 +106,13 @@
   font-family: 'Sora-SemiBold', sans-serif;
   font-size: 22px;
 }
+
 .container-tasks .container-update-tasks .edit-task {
   min-height: 800px;
   height: auto;
   margin-bottom: 40px;
 }
+
 .container-tasks .container-update-tasks .edit-task .box-update {
   width: 600px;
   margin: 0 auto;
@@ -380,31 +383,37 @@
   .container-tasks .title h3 {
     font-size: 35px;
   }
+
   .container-tasks .container-update-tasks .box {
     width: 85%;
   }
+
   .container-tasks .container-update-tasks .edit-task .box-update {
     width: 90%;
   }
 }
 
 @media(max-width: 650px) {
+
   #form-update-task input[type="text"],
   #form-update-task textarea {
     width: 100%;
   }
+
   #form-update-task select {
     width: 220px;
   }
+
   #form-update-task input[type="date"] {
     width: 220px;
   }
 }
 
 @media(max-width: 610px) {
-  #form-update-task > p {
+  #form-update-task>p {
     font-size: 16px;
   }
+
   /* Change font inputs */
   #form-update-task input[type="text"],
   #form-update-task textarea,
@@ -415,12 +424,13 @@
 }
 
 @media(max-width: 510px) {
-  #form-update-task > p {
+  #form-update-task>p {
     border-bottom: none;
     width: 90%;
     margin: 0 auto;
     text-align: center;
   }
+
   .container-tasks .container-update-tasks .box .tasks button p:first-child {
     font-size: 18px;
   }
@@ -430,18 +440,22 @@
   .container-tasks .container-update-tasks .edit-task .box-update {
     width: 95%;
   }
+
   .container-tasks .title h3 {
     font-size: 30px;
   }
+
   .container-tasks .container-update-tasks .box h3 {
     font-size: 20px;
   }
+
   #form-update-task label {
     font-size: 16px;
   }
 }
 
 @media(max-width: 400px) {
+
   /* Change title font size */
   .container-tasks .title p {
     width: 90%;
@@ -452,6 +466,7 @@
 }
 
 @media(max-width: 350px) {
+
   #form-update-task select,
   #form-update-task input[type="date"] {
     width: 90%;
