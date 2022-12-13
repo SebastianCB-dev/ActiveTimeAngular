@@ -340,7 +340,7 @@
 
 @media(max-width: 380px) {
   .box .content>p>a {
-    margin-right: 5px;
+    margin-left: 5px;
   }
 
   .box .content>p {
