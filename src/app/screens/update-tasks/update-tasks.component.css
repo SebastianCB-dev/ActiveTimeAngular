@@ -39,14 +39,16 @@
 }
 
 .container-tasks .container-update-tasks .all-tasks .tasks {
-  height: 800px;
+  max-height: 800px;
+  height: auto;
   overflow: hidden;
   overflow-y: auto;
   padding: 20px;
 }
 
 .container-tasks .container-update-tasks .box {
-  height: 800px;
+  max-height: 800px;
+  height: auto;
   width: 700px;
 }
 
@@ -434,6 +436,18 @@
   .container-tasks .container-update-tasks .box .tasks button p:first-child {
     font-size: 18px;
   }
+}
+
+@media(max-width: 480px) {
+  .container-tasks .container-update-tasks .box .tasks .no-tasks img {
+    width: 240px;
+    margin-bottom: 20px;
+  }
+  .container-tasks .container-update-tasks .box .tasks .no-tasks p {
+    font-size: 18px;
+    text-align: center;
+  }
+
 }
 
 @media(max-width: 450px) {
