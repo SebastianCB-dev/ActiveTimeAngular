@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ScreensRoutingModule } from './screens-routing.module';
+import { ComponentsModule } from '../components/components.module';
 
 import { ConvertStatus } from '../pipes/convertStatus.pipe';
 
@@ -28,7 +29,8 @@ import { UpdateTasksComponent } from './update-tasks/update-tasks.component';
     CommonModule,
     ScreensRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ComponentsModule
   ]
 })
 export class ScreensModule { }
