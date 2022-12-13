@@ -101,11 +101,7 @@
 
 </section>
 
-<div *ngIf="isLoading" class="loading">
-  <div class="content">
-    <i class="fas fa-spinner"></i>
-  </div>
-</div>
+<app-loading *ngIf="isLoading"></app-loading>
 
 <button type="button" 
         id="button-back" 
