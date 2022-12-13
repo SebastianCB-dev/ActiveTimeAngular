@@ -77,7 +77,6 @@
   -ms-transition: all 300ms;
   -o-transition: all 300ms;
   transition: all 300ms;
-
 }
 
 #list-tasks-container .tasks-box .task h2 {
@@ -279,6 +278,7 @@
 }
 
 @media(max-width: 550px) {
+
   #tasks-pending p,
   #tasks-completed p {
     font-size: 20px;
@@ -286,6 +286,7 @@
 }
 
 @media(max-width: 450px) {
+
   #tasks-pending p,
   #tasks-completed p {
     font-size: 18px;
