@@ -330,6 +330,10 @@
   .box .content .box-form span {
     font-size: 10px;
   }
+  .alert-user-created {
+    width: 90%;
+    margin-left: -45%;
+  }
 }
 
 @media(max-width: 400px) {
