@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {FirebaseService} from "../../services/firebase.service";
 import {SoundsService} from "../../services/sounds.service";
@@ -8,14 +8,20 @@ import {SoundsService} from "../../services/sounds.service";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   titlePage: Element = document.querySelector('#title-page')!;
   arePasswordsTheSame: boolean = true;
   myForm: UntypedFormGroup = this.fb.group({
-    username: [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-    password: [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]],
-    'confirm-password': [, [Validators.required, Validators.maxLength(16), Validators.minLength(6)]]
+    username: [, [Validators.required, 
+                  Validators.maxLength(16), 
+                  Validators.minLength(6)]],
+    password: [, [Validators.required, 
+                  Validators.maxLength(16), 
+                  Validators.minLength(6)]],
+    'confirm-password': [, [Validators.required, 
+                            Validators.maxLength(16), 
+                            Validators.minLength(6)]]
   });
 
   isCreating: boolean = false;
@@ -26,12 +32,10 @@ export class RegisterComponent implements OnInit {
               private firebaseService: FirebaseService,
               private soundsService: SoundsService) { }
 
-  ngOnInit(): void {}
-
   async register() {
-    const username = this.myForm.controls['username'].value;
-    const password = this.myForm.controls['password'].value;
-    const confirmPassword = this.myForm.controls['confirm-password'].value;
+    const username: string = this.myForm.controls['username'].value;
+    const password: string = this.myForm.controls['password'].value;
+    const confirmPassword: string = this.myForm.controls['confirm-password'].value;
 
     // If the form is invalid
     if(this.myForm.invalid) {
@@ -56,7 +60,9 @@ export class RegisterComponent implements OnInit {
     }
     const currentDate = new Date().toJSON();
     // Register User
-    await this.firebaseService.registerUser({username,password, createdAt: currentDate})
+    await this.firebaseService.registerUser({username,
+                                             password,
+                                            createdAt: currentDate});
 
     this.canShowCreated = true;
     this.soundsService.success();
@@ -65,7 +71,7 @@ export class RegisterComponent implements OnInit {
     this.myForm.reset();
   }
 
-  isInvalidCamp( camp: string ): boolean {
+  isInvalidCamp(camp: string): boolean {
     return this.myForm.controls[camp].errors! &&
            this.myForm.controls[camp].touched!;
   }

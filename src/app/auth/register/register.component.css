@@ -1,7 +1,7 @@
 .container-register {
   width: 100%;
   min-height: 100vh;
-  max-height: auto;
+  height: auto;
   display: flex;
   align-items: center;
 }
@@ -318,6 +318,7 @@
     height: auto;
     padding-bottom: 25px;
   }
+
   .box .title p {
     margin-left: 0;
     position: relative;
@@ -330,6 +331,7 @@
   .box .content .box-form span {
     font-size: 10px;
   }
+
   .alert-user-created {
     width: 90%;
     margin-left: -45%;
@@ -340,11 +342,13 @@
   .box .content h3 {
     font-size: 25px;
   }
+
   .box .content>p {
     width: 90%;
     margin: 0 auto;
   }
-    .box .title p {
+
+  .box .title p {
     width: 100%;
     position: relative;
     margin-left: 0;
