@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import {
   ActivatedRouteSnapshot,
@@ -11,6 +10,7 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
+
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Injectable({
@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate, CanLoad {
    async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree>  {
-    const userSession = localStorage.getItem('att-session');
+    const userSession: string = localStorage.getItem('att-session') || '';
     if(!userSession) {
       return this.router.navigateByUrl('/auth/login');
     }
@@ -43,7 +43,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     route: Route,
     segments: UrlSegment[]): Promise<boolean> {
 
-     const userSession = localStorage.getItem('att-session');
+     const userSession: string = localStorage.getItem('att-session') || '';
      if (!userSession) {
        return this.router.navigateByUrl('/auth/login');
      }
