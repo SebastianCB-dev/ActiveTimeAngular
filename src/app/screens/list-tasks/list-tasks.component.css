@@ -53,6 +53,9 @@
   margin-top: 30px;
   flex-wrap: wrap;
   align-items: center;
+  max-height: 700px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 #list-tasks-container .tasks-box .task {
@@ -235,7 +238,7 @@
 #tasks-pending,
 #tasks-completed {
   width: 100%;
-  height: 300px;
+  height: auto;
 }
 
 #tasks-pending p,
@@ -272,6 +275,24 @@
   position: fixed;
   top: 20px;
   right: 20px;
+}
+
+@media(max-width: 550px) {
+  #tasks-pending p,
+  #tasks-completed p {
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 450px) {
+  #tasks-pending p,
+  #tasks-completed p {
+    font-size: 18px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+  }
 }
 
 @media(max-width: 400px) {
