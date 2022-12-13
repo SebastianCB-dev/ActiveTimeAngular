@@ -82,7 +82,11 @@ export class RegisterComponent {
     this.canShowCreated = false;
   }
   changeValuePassword() {
-    this.arePasswordsTheSame = true;
+    const password: string = this.myForm.controls['password'].value;
+    const confirmPassword: string = this.myForm.controls['confirm-password'].value;
+    if(password === confirmPassword) {
+      this.arePasswordsTheSame = true;
+    }
     this.canShowCreated = false;
   }
 }

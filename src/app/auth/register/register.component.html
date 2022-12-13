@@ -49,8 +49,7 @@
                (keyup)="changeValuePassword()" 
                required
                maxlength="25">
-        <label class="lbl-confirm-password">Confirm password</label>
-        <span *ngIf="isInvalidCamp('confirm-password')">Confirm your password!</span>
+        <label class="lbl-confirm-password">Confirm password</label>        
         <span *ngIf="!arePasswordsTheSame">The passwords are not the same!</span>
 
         <!-- Submit -->
