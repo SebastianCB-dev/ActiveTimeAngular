@@ -415,7 +415,6 @@
     font-size: 16px;
   }
 
-  /* Change font inputs */
   #form-update-task input[type="text"],
   #form-update-task textarea,
   #form-update-task select,
@@ -442,6 +441,7 @@
     width: 240px;
     margin-bottom: 20px;
   }
+
   .container-tasks .container-update-tasks .box .tasks .no-tasks p {
     font-size: 18px;
     text-align: center;
@@ -469,7 +469,6 @@
 
 @media(max-width: 400px) {
 
-  /* Change title font size */
   .container-tasks .title p {
     width: 90%;
     margin: 0 auto;

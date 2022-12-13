@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+
+import { Task } from 'src/app/interfaces/task.interface';
+
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -10,10 +13,10 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class UpdateTasksComponent implements OnInit {
   taskCharged: boolean = false;
   isLoading: boolean = false;
-  tasks: any = [];
+  tasks: Task[] = [];
   isThereATask: boolean = false;
 
-  currentTask = {
+  currentTask: Task = {
     "name": "",
     "description": "",
     "priority": "",
@@ -38,9 +41,9 @@ export class UpdateTasksComponent implements OnInit {
   touchButton: boolean = false;
 
   constructor(private fs: FirebaseService,
-    private fb: FormBuilder) {
+              private fb: FormBuilder) {
     this.getTasks();   
-   }
+  }
 
   ngOnInit(): void {
     this.clearForm();
@@ -63,15 +66,23 @@ export class UpdateTasksComponent implements OnInit {
     this.enableForm();    
     this.currentTask = this.tasks[index];
     this.isThereATask = true;
-    this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 'description': this.tasks[index]['description'], 'priority': this.tasks[index]['priority'], 'initialDate': this.tasks[index]['initialDate'], 'finalDate': this.tasks[index]['finalDate'], 'isCompleted': this.tasks[index]['isCompleted'] });
+    this.miFormulario.setValue({ 'name': this.tasks[index]['name'], 
+                                 'description': this.tasks[index]['description'],
+                                 'priority': this.tasks[index]['priority'],
+                                 'initialDate': this.tasks[index]['initialDate'], 
+                                 'finalDate': this.tasks[index]['finalDate'], 
+                                 'isCompleted': this.tasks[index]['isCompleted'] });
   }
   // PIPE 
   messageMapping:
     { [k: string]: string } = { '=0': 'You have 0 tasks.', '=1': 'There is 1 task.', 'other': 'There are # tasks.' };
+  
   async updateTask() { 
 
     if(!(this.miFormulario.valid) ||
-       (this.miFormulario.get('initialDate')?.value >  this.miFormulario.get('finalDate')?.value ) || this.miFormulario.get('description')?.value.trim().length === 0){      
+       (this.miFormulario.get('initialDate')?.value > 
+        this.miFormulario.get('finalDate')?.value ) || 
+        this.miFormulario.get('description')?.value.trim().length === 0){      
       this.touchButton = true;
       this.wasUpdated = false;
       return;
@@ -79,7 +90,6 @@ export class UpdateTasksComponent implements OnInit {
 
     this.isLoading = true;
     this.updateValues();
-    console.log(this.currentTask);
     await this.fs.updateTask(this.currentTask);
     await this.getTasks();
     this.touchButton = true;
@@ -87,12 +97,15 @@ export class UpdateTasksComponent implements OnInit {
     this.isLoading = false;
     this.wasUpdated = true;
   }
+
   writing() {
     this.isValidForm = true;
   }
+
   getMinDate(): string {
     return new Date().toISOString().split('T')[0];
   }
+
   clearForm() {
     this.miFormulario.reset({
       "name": '',
@@ -103,6 +116,7 @@ export class UpdateTasksComponent implements OnInit {
       "isCompleted": true
     });
   }
+
   disableForm() {
     this.miFormulario.get('name')?.disable();
     this.miFormulario.get('description')?.disable();
@@ -111,6 +125,7 @@ export class UpdateTasksComponent implements OnInit {
     this.miFormulario.get('finalDate')?.disable();
     this.miFormulario.get('isCompleted')?.disable();
   }
+
   enableForm() {
     this.miFormulario.get('description')?.enable();
     this.miFormulario.get('priority')?.enable();
@@ -118,11 +133,13 @@ export class UpdateTasksComponent implements OnInit {
     this.miFormulario.get('finalDate')?.enable();
     this.miFormulario.get('isCompleted')?.enable();
   }
+
   cancelUpdate() {
     this.isThereATask = false;
     this.clearForm();
     this.disableForm();
   }
+
   updateValues() {
     this.currentTask.description = this.miFormulario.get('description')?.value;
     this.currentTask.priority = this.miFormulario.get('priority')?.value;
@@ -137,7 +154,7 @@ export class UpdateTasksComponent implements OnInit {
 
   orderTasks() {
     if(this.tasks.length === 0) return;
-    this.tasks.sort((a: any, b: any) => {
+    this.tasks.sort((a: Task, b: Task) => {
         if (a.isCompleted && !b.isCompleted) {
           return 1;
         }

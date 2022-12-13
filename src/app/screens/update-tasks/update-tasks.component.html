@@ -85,7 +85,10 @@
           </select>
 
           <div class="buttons">
-            <button type="button" [disabled]="!isThereATask" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
+            <button type="button" 
+                    [disabled]="!isThereATask" 
+                    class="btn btn-danger" 
+                    (click)="cancelUpdate()">Cancel</button>
             <button type="submit" 
                     [disabled]="!miFormulario.valid" 
                     class="btn btn-warning">Update</button>
@@ -96,10 +99,7 @@
 
   </article>
 
-
-
 </section>
-
 
 <div *ngIf="isLoading" class="loading">
   <div class="content">
@@ -107,7 +107,10 @@
   </div>
 </div>
 
-<button type="button" id="button-back" class="btn btn-secondary" routerLink="tasks/menu">
+<button type="button" 
+        id="button-back" 
+        class="btn btn-secondary" 
+        routerLink="tasks/menu">
   Back
   <i class="fa-solid fa-rotate-left"></i>
 </button>
