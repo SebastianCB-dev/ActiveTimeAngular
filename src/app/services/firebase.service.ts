@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { UserRegister } from '../interfaces/userRegister.interface';
 import { getFirestore,
          doc,
          getDoc,
@@ -12,6 +13,7 @@ import { getFirestore,
          where,
          updateDoc,
          deleteDoc } from 'firebase/firestore';
+import { Task } from '../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +40,7 @@ export class FirebaseService {
     return getFirestore(this.app);
   }
 
-  async registerUser( user: any ) {
+  async registerUser( user: UserRegister ) {
     await setDoc(doc(this.db, "users", user.username), user);
   }
 
@@ -48,7 +50,7 @@ export class FirebaseService {
     return docSnap.data();
   }
 
-  async registerTask( task: any ) {
+  async registerTask( task: Task ) {
     await setDoc(doc(this.db, "tasks", task.id), task);
   }
 

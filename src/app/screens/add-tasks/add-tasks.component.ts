@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { FirebaseService } from '../../services/firebase.service';
 import { SoundsService } from 'src/app/services/sounds.service';
+import { Task } from 'src/app/interfaces/task.interface';
 
 @Component({
   selector: 'app-add-tasks',
@@ -53,9 +54,9 @@ export class AddTasksComponent implements OnInit {
       this.ss.error();
       return;
     }
-    const task = {
+    const task: Task = {
       id: uuidv4(),
-      user: localStorage.getItem('att-session'),
+      user: localStorage.getItem('att-session') || '',
       name: this.miFormulario.controls["task-name"].value,
       description: this.miFormulario.controls["task-description"].value,
       priority: this.miFormulario.controls["priority"].value,
