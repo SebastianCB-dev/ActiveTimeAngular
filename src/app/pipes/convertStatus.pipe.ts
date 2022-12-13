@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class ConvertStatus implements PipeTransform {
 
-  transform(value: string): string {
+  transform(value: boolean): string {
     if (value) {
       return 'Completed';
     } else {
