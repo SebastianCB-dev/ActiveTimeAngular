@@ -256,7 +256,8 @@
   .title-list-tasks h3 {
     font-size: 35px;
   }
-  .container-delete-tasks .title > p {
+
+  .container-delete-tasks .title>p {
     font-size: 18px;
   }
 }
