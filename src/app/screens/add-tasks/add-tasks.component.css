@@ -331,8 +331,8 @@
     width: 90%;
   }
 
-  /* Change margin labels */    
-  
+  /* Change margin labels */
+
   .content-add-task form .lbl-name,
   .content-add-task form .lbl-description {
     margin-left: 12%;
@@ -347,8 +347,9 @@
 }
 
 @media(max-width: 600px) {
-  .content-add-task form .input-date, 
-  .content-add-task form .select-priority{
+
+  .content-add-task form .input-date,
+  .content-add-task form .select-priority {
     width: 250px;
   }
 
@@ -357,31 +358,35 @@
     margin: 0 auto;
     justify-content: center !important;
   }
+
   .content-add-task form .buttons button {
     margin: 10px 10px;
-  } 
+  }
 }
 
 @media(max-width: 400px) {
   .container-main .content-add-task h3 {
     font-size: 25px;
   }
-  .container-main .content-add-task .title > p {
+
+  .container-main .content-add-task .title>p {
     text-align: end;
     left: 0;
     margin-left: 0;
     width: 90%;
     margin-right: 25px;
   }
-    .container-main .content-add-task .title .points .point {
+
+  .container-main .content-add-task .title .points .point {
     width: 16px;
     height: 16px;
   }
 }
 
 @media(max-width: 320px) {
-    .content-add-task form .input-date, 
-  .content-add-task form .select-priority{
+
+  .content-add-task form .input-date,
+  .content-add-task form .select-priority {
     width: 90%;
   }
 }

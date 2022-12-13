@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { FirebaseService } from '../../services/firebase.service';
-import { SoundsService } from 'src/app/services/sounds.service';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 // ID
 import { v4 as uuidv4 } from 'uuid';
-import { FormBuilder } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
+
+import { FirebaseService } from '../../services/firebase.service';
+import { SoundsService } from 'src/app/services/sounds.service';
+
 @Component({
   selector: 'app-add-tasks',
   templateUrl: './add-tasks.component.html',
@@ -15,8 +17,10 @@ import { FormGroup } from '@angular/forms';
 export class AddTasksComponent implements OnInit {
 
   miFormulario: FormGroup = this.fb.group({
-    "task-name": [,[Validators.required, Validators.minLength(1)]],
-    "task-description": [,[Validators.required, Validators.minLength(1)]],
+    "task-name": [,[Validators.required, 
+                    Validators.minLength(1)]],
+    "task-description": [,[Validators.required, 
+                           Validators.minLength(1)]],
     "priority": [, [Validators.required]],
     "initial-date": [,[Validators.required]],
     "final-date": [,[Validators.required]]
@@ -42,7 +46,8 @@ export class AddTasksComponent implements OnInit {
       this.ss.error();
       return;
     }
-    if(this.miFormulario.controls['initial-date'].value > this.miFormulario.controls['final-date'].value) {
+    if(this.miFormulario.controls['initial-date'].value >
+       this.miFormulario.controls['final-date'].value) {
       this.isValidForm = false;
       this.isCreating = false;
       this.ss.error();
@@ -67,7 +72,6 @@ export class AddTasksComponent implements OnInit {
   }
 
   clearForm() {
-
     this.miFormulario.reset({
       "task-name": '',
       "task-description": '',
@@ -75,8 +79,6 @@ export class AddTasksComponent implements OnInit {
       "initial-date": '',
       "final-date": ''
     });
-
-
   }
 
   writing() {
@@ -87,5 +89,4 @@ export class AddTasksComponent implements OnInit {
     return new Date().toISOString().split('T')[0];
   }
 
- 
 }
