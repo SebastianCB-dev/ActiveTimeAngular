@@ -26,6 +26,7 @@
   width: 100%;
   height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin-top: 40px;
@@ -46,7 +47,7 @@
 
 .container-tasks .container-update-tasks .box {
   height: 800px;
-  width: 45%;
+  width: 700px;
 }
 
 .container-tasks .container-update-tasks .box h3 {
@@ -104,7 +105,11 @@
   font-family: 'Sora-SemiBold', sans-serif;
   font-size: 22px;
 }
-
+.container-tasks .container-update-tasks .edit-task {
+  min-height: 800px;
+  height: auto;
+  margin-bottom: 40px;
+}
 .container-tasks .container-update-tasks .edit-task .box-update {
   width: 600px;
   margin: 0 auto;
@@ -120,6 +125,7 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   border-radius: 7px;
+  border: 1px solid #ccc;
 }
 
 .container-tasks .container-update-tasks .edit-task .box-update #form-update-task {
@@ -264,14 +270,22 @@
   margin: 0 auto;
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 20px;
+}
+
+#form-update-task .buttons button {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 #button-back {
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 99;
 }
 
 .loading {
@@ -354,4 +368,92 @@
   color: rgb(255, 166, 0);
   font-size: 13px;
   font-family: 'Sora-SemiBold', sans-serif;
+}
+
+@media(max-width: 1399px) {
+  .container-tasks .container-update-tasks .box h3 {
+    text-align: center;
+  }
+}
+
+@media(max-width: 700px) {
+  .container-tasks .title h3 {
+    font-size: 35px;
+  }
+  .container-tasks .container-update-tasks .box {
+    width: 85%;
+  }
+  .container-tasks .container-update-tasks .edit-task .box-update {
+    width: 90%;
+  }
+}
+
+@media(max-width: 650px) {
+  #form-update-task input[type="text"],
+  #form-update-task textarea {
+    width: 100%;
+  }
+  #form-update-task select {
+    width: 220px;
+  }
+  #form-update-task input[type="date"] {
+    width: 220px;
+  }
+}
+
+@media(max-width: 610px) {
+  #form-update-task > p {
+    font-size: 16px;
+  }
+  /* Change font inputs */
+  #form-update-task input[type="text"],
+  #form-update-task textarea,
+  #form-update-task select,
+  #form-update-task input[type="date"] {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 510px) {
+  #form-update-task > p {
+    border-bottom: none;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .container-tasks .container-update-tasks .box .tasks button p:first-child {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 450px) {
+  .container-tasks .container-update-tasks .edit-task .box-update {
+    width: 95%;
+  }
+  .container-tasks .title h3 {
+    font-size: 30px;
+  }
+  .container-tasks .container-update-tasks .box h3 {
+    font-size: 20px;
+  }
+  #form-update-task label {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 400px) {
+  /* Change title font size */
+  .container-tasks .title p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+}
+
+@media(max-width: 350px) {
+  #form-update-task select,
+  #form-update-task input[type="date"] {
+    width: 90%;
+  }
 }
