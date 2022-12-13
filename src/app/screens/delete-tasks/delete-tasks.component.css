@@ -200,24 +200,82 @@
   }
 }
 
+#tasks-completed {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#tasks-completed p {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Sora-Regular', sans-serif;
+  color: #fff;
+}
+
+#tasks-completed img {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+#tasks-completed button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
 #button-back {
   position: fixed;
   top: 20px;
   right: 20px;
 }
 
+@media(max-width: 550px) {
+
+  #tasks-pending p,
+  #tasks-completed p {
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 450px) {
+
+  #tasks-pending p,
+  #tasks-completed p {
+    font-size: 18px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+@media(max-width: 400px) {
+  .title-list-tasks h3 {
+    font-size: 35px;
+  }
+  .container-delete-tasks .title > p {
+    font-size: 18px;
+  }
+}
+
 @media(max-width: 500px) {
   .container-tasks .task {
     width: 100%;
   }
+
   .container-delete-tasks h3 {
     font-size: 35px;
   }
-  .container-delete-tasks > p {
+
+  .container-delete-tasks>p {
     width: 90%;
     margin: 0 auto;
     font-size: 18px;
   }
+
   .container-tasks .task h2 {
     font-size: 22px;
   }
