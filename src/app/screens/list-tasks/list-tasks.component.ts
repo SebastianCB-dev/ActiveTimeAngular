@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {FirebaseService} from "../../services/firebase.service";
 
@@ -10,7 +10,7 @@ import { Task } from 'src/app/interfaces/task.interface';
   templateUrl: './list-tasks.component.html',
   styleUrls: ['./list-tasks.component.css']
 })
-export class ListTasksComponent implements OnInit {
+export class ListTasksComponent {
 
   tasks_completed: Task[] = [];
   tasks_no_completed: Task[] = [];
@@ -22,9 +22,6 @@ export class ListTasksComponent implements OnInit {
   }
   constructor( private fs: FirebaseService) {
     this.getData();
-  }
-
-  ngOnInit(): void {
   }
 
   async getData() {
