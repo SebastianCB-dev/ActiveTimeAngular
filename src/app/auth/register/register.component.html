@@ -67,12 +67,7 @@
 
 </div>
 
-<div *ngIf="isCreating"
-      class="loading">
-    <div class="content">
-      <i class="fas fa-spinner"></i>
-    </div>
-</div>
+<app-loading *ngIf="isCreating"></app-loading>
 
 <div class="alert alert-success alert-user-created"
      *ngIf="canShowCreated">User created successfully! <a routerLink="/auth/login">Sign in</a></div>
