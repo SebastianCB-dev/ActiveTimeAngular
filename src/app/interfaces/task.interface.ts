@@ -8,5 +8,5 @@ export interface Task {
   isCompleted: boolean,
   name: string,
   priority: string,
-  user: string
+  user?: string
 }
