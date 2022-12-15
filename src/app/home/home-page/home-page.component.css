@@ -214,3 +214,9 @@
     margin: 0 auto;
   }
 }
+
+@media(max-width: 500px) {
+  .home-page-container .main-content .text h4 {
+    font-size: 40px;
+  }
+}
