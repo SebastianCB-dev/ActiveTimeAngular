@@ -57,12 +57,12 @@
 
 .home-page-container .main-content .text a {
   display: block;
-  padding-bottom: 2px;
-  color: #6680FF;
+  padding: 5px 30px;
+  color: #fff;
   font-family: 'Sora-SemiBold', sans-serif;
-  border-bottom: 3px solid #6680FF;
+  border: 2px solid #6680FF;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 23px;
   width: max-content;
   margin-left: 30%;
   -webkit-transition: all 300ms;
@@ -70,11 +70,17 @@
   -ms-transition: all 300ms;
   -o-transition: all 300ms;
   transition: all 300ms;
+  background-color: #6680FF;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .home-page-container .main-content .text a:hover {
-  -webkit-animation: shake 2s infinite linear;
-  animation: shake 2s infinite linear;
+  background-color: #3c5cfe;
+  box-shadow: 0 0 10px #6680FF;
 }
 
 .home-page-container .main-content .images {
@@ -109,24 +115,9 @@
   border-radius: 10px;
 }
 
-@keyframes shake {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .purple {
   color: #6680FF;
 }
-
 
 /* Responsive */
 
