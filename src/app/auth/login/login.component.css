@@ -245,7 +245,21 @@
   text-decoration: underline;
 }
 
-@media(max-width: 500px) {
+@media(max-width: 600px) {
+  .box {
+    width: 90%;
+    height: auto;
+    padding-bottom: 25px;
+  }
+  .box .title p {
+    margin-left: 0;
+    position: relative;
+    left: 50%;
+    margin-left: -140px;
+  }
+}
+
+@media(max-width: 470px) {
   .box .content .box-form span {
     font-size: 10px;
   }
