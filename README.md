@@ -1,28 +1,28 @@
 # ActiveTimeAngular Task Manager v14
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
+This is a simple task manager application built with Angular 2.0.0 and TypeScript. It is a work in progress and is not yet complete.
 
+## How it Works
 
-## Development server
+This application was built using the Angular CLI. The Angular CLI is a command line interface that allows you to quickly create and manage Angular applications. You can learn more about the Angular CLI [here](https://cli.angular.io/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As a backend, this application uses Firebase. Firebase is a cloud-based NoSQL database that allows you to store and retrieve data in real-time. You can learn more about Firebase [here](https://firebase.google.com/).
 
-## Code scaffolding
+## Installation
+To run this application, you will need to have Node.js installed. You can download it from [here](https://nodejs.org/en/).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once you have Node.js installed, you will need to install the Angular CLI. You can do this by running the following command in your terminal:
 
-## Build
+    npm install --location=global @angular-cli
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Once you have the Angular CLI installed, you will need to install the dependencies for this project. You can do this by running the following command in your terminal:
 
-## Running unit tests
+    npm install
+  
+## Running the Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run the application, you will need to run the following command in your terminal:
 
-## Running end-to-end tests
+    ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This will start the application on port 4200. You can access the application by navigating to [http://localhost:4200](http://localhost:4200) in your browser.
