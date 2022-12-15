@@ -1,6 +1,6 @@
 # ActiveTimeAngular Task Manager v14
 
-This is a simple task manager application built with Angular 2.0.0 and TypeScript. It is a work in progress and is not yet complete.
+This is a simple task manager application built with Angular 14 and TypeScript. It is a work in progress and is not yet complete.
 
 ## How it Works
 
