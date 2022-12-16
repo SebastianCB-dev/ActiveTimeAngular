@@ -225,6 +225,13 @@
   right: 20px;
 }
 
+@media(max-width: 650px) {
+  .title-list-tasks {
+    height: 80px;
+    margin-top: 40px;
+  }
+}
+
 @media(max-width: 550px) {
 
   #tasks-pending p,
