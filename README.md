@@ -2,6 +2,8 @@
 
 This is a simple task manager application built with Angular 14 and TypeScript. It is a work in progress and is not yet complete.
 
+You can view a live demo of the application [here](https://activetime.netlify.app/).
+
 ## How it Works
 
 This application was built using the Angular CLI. The Angular CLI is a command line interface that allows you to quickly create and manage Angular applications. You can learn more about the Angular CLI [here](https://cli.angular.io/).
